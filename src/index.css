@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sevillana&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-lilita: "Lilita One", cursive;
+  --font-sevillana: "Sevillana", cursive;
+}
+
+@layer base {
+  :root {
+    /* Font families */
+    --font-playfair: "Playfair Display", serif;
+    --font-lilita: "Lilita One", cursive;
+    --font-sevillana: "Sevillana", cursive;
+
+    /* Light mode colors */
+    --customBlack: #111111;
+    --customGray: #333333;
+    --customBlue: #3b82f6;
+    --customWhite: #ffffff;
+    --customOffWhite: #f9fafb;
+
+    /* Warm accents (new) */
+    --customRed: #dc2626;
+    --customGreen: #16a34a;
+    --customGold: #d97706;
+    --customPink: #db2777;
+  }
+
+  .dark {
+    /* Dark mode reverses */
+    --customBlack: #e5e7eb;
+    --customGray: #9ca3af;
+    --customBlue: #818cf8;
+    --customWhite: #1f2937;
+    --customOffWhite: #374151;
+
+    /* Dark mode accents (slightly muted) */
+    --customRed: #ef4444;
+    --customGreen: #22c55e;
+    --customGold: #f59e0b;
+    --customPink: #ec4899;
+  }
+}
+
+@layer utilities {
+  .bg-customBlack {
+    background-color: var(--customBlack);
+  }
+  .text-customBlack {
+    color: var(--customBlack);
+  }
+  .border-customBlack {
+    border-color: var(--customBlack);
+  }
+
+  .bg-customGray {
+    background-color: var(--customGray);
+  }
+  .text-customGray {
+    color: var(--customGray);
+  }
+  .border-customGray {
+    border-color: var(--customGray);
+  }
+
+  .bg-customBlue {
+    background-color: var(--customBlue);
+  }
+  .text-customBlue {
+    color: var(--customBlue);
+  }
+  .border-customBlue {
+    border-color: var(--customBlue);
+  }
+
+  .bg-customWhite {
+    background-color: var(--customWhite);
+  }
+  .text-customWhite {
+    color: var(--customWhite);
+  }
+  .border-customWhite {
+    border-color: var(--customWhite);
+  }
+
+  .bg-customOffWhite {
+    background-color: var(--customOffWhite);
+  }
+  .text-customOffWhite {
+    color: var(--customOffWhite);
+  }
+  .border-customOffWhite {
+    border-color: var(--customOffWhite);
+  }
+  .bg-customRed {
+    background-color: var(--customRed);
+  }
+  .text-customRed {
+    color: var(--customRed);
+  }
+  .border-customRed {
+    border-color: var(--customRed);
+  }
+
+  .bg-customGreen {
+    background-color: var(--customGreen);
+  }
+  .text-customGreen {
+    color: var(--customGreen);
+  }
+  .border-customGreen {
+    border-color: var(--customGreen);
+  }
+
+  .bg-customGold {
+    background-color: var(--customGold);
+  }
+  .text-customGold {
+    color: var(--customGold);
+  }
+  .border-customGold {
+    border-color: var(--customGold);
+  }
+
+  .bg-customPink {
+    background-color: var(--customPink);
+  }
+  .text-customPink {
+    color: var(--customPink);
+  }
+  .border-customPink {
+    border-color: var(--customPink);
+  }
+}
