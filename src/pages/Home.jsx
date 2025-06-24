@@ -7,14 +7,15 @@ const Home = () => {
       <div className="parallax-bg" />
 
       <div className="content">
-        <h1 className="text-center py-6 font-lilita text-6xl text-customPink mt-50">
-          Hi, I'm Angela,
+        <h1 className="text-center py-6 tracking-widest font-lilita text-6xl text-amber-600 mt-50">
+          Hi, I'm Angela.
         </h1>
 
-        <p className="text-center font-mono font-extrabold text-xl text-customPink">
+        <p className="text-center font-mono font-extrabold text-xl text-customOffWhite">
           <Typewriter
             words={[
               "Frontend Developer.",
+              "> 4 Years Experience.",
               "UI/UX Enthusiast.",
               "React • Next.js • JavaScript",
               "Tailwind CSS • Bootstrap • Material UI",
@@ -33,7 +34,7 @@ const Home = () => {
         </p>
 
         <h2 className="text-4xl font-bold font-mono text-customBlack text-center mt-20">
-          Welcome to My Portfolio 😊😁
+          Welcome to My Portfolio 😊
         </h2>
       </div>
     </div>

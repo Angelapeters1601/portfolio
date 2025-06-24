@@ -9,10 +9,13 @@ const AppLayout = () => {
   const { isLoading } = useLoading(); // Custom hook to track navigation state
 
   return (
-    <div className="relative flex flex-col min-h-screen bg-customWhite text-customBlack">
+    <div
+      className="relative flex flex-col min-h-screen
+     bg-customWhite text-customBlack"
+    >
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1 min-h-100">
         {isLoading ? (
           <div className="h-full flex items-center justify-center">
             <Loader />

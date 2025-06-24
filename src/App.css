@@ -17,10 +17,11 @@
   height: 200%;
 
   background: radial-gradient(
-    circle at 24.1% 68.8%,
-    rgb(50, 50, 50) 0%,
-    rgb(0, 0, 0) 99.4%
+    circle at center,
+    rgba(0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
   );
+
   transform: translateZ(-1px) scale(2);
   z-index: -1;
 
