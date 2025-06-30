@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -14,81 +15,136 @@ import {
   SiNextdotjs,
   SiFirebase,
   SiStyledcomponents,
+  SiReact,
 } from "react-icons/si";
+import RateItImg from "../assets/rate-it.png";
 
 const Projects = () => {
   const projects = [
     {
+      id: "corley-legal",
+      title: "Corley Legal",
+      description:
+        "A paralegal service platform designed to assist individuals in connecting with qualified legal professionals across various domains, including business law, family law, criminal law, intellectual property, estate planning, and personal injury.",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+        "Twillio",
+        "Google Cloud Services",
+        "React-Router-Dom",
+        "Lazy-loading & Suspense",
+        "Swiper.js",
+        "React-Awesome-Reveal",
+        "Framer motion",
+        "Plesk",
+      ],
+      image: "https://corley.legal",
+      links: {
+        live: "https://corley.legal",
+        code: "https://github.com/angelapeters1601/corley-legal",
+      },
+      accentColor: "bg-[#764ABC]/20",
+      icon: <SiRedux className="text-[#764ABC]" />,
+    },
+    {
+      id: "rate-it",
+      title: "RateIt",
+      description:
+        "A beauty product review web application inspired by Good Housekeeping. It helps users make informed decisions by providing access to expert reviews and ratings.",
+
+      tags: [
+        "React.js",
+        "Redux toolkit",
+        "Tailwindcss",
+        "Email.Js",
+        "Animations",
+      ],
+      image: RateItImg,
+      links: {
+        live: "https://rate-it-one.vercel.app/",
+        code: "https://github.com/angelapeters1601/rate-it",
+      },
+      accentColor: "bg-[#007FFF]/20",
+      icon: <SiTailwindcss className="text-black dark:text-white" />,
+    },
+    {
+      id: "fast-react-pizza",
       title: "Fast React Pizza Co.",
       description:
-        "Blazing-fast pizza ordering experience with real-time cart updates and kitchen dashboard. Reduced checkout time by 40% through UX optimizations.",
-      tags: ["React", "Redux", "Tailwind"],
+        "Blazing-fast pizza ordering experience with real-time cart updates. Reduced checkout time by 40% through UX optimizations.",
+      tags: [
+        "React",
+        "Redux toolkit",
+        "Tailwindcss",
+        "Vite",
+        "React-Router-dom",
+      ],
       image: "https://angelapeters1601.github.io/fast-react-pizza",
       links: {
         live: "https://angelapeters1601.github.io/fast-react-pizza",
         code: "https://github.com/angelapeters1601/fast-react-pizza",
       },
-      accentColor: "bg-[#E34F26]/20", // Pizza orange
+      accentColor: "bg-[#E34F26]/20",
       icon: <FaReact className="text-[#61DAFB]" />,
     },
     {
-      title: "RateIt Reviews",
-      description:
-        "AI-powered review platform analyzing sentiment across 10K+ products. Implemented secure JWT auth with 99.9% uptime.",
-      tags: ["Next.js", "MongoDB", "Node"],
-      image: "https://rate-it-one.vercel.app/",
-      links: {
-        live: "https://rate-it-one.vercel.app/",
-        code: "https://github.com/angelapeters1601/rate-it",
-      },
-      accentColor: "bg-[#007FFF]/20", // Azure blue
-      icon: <SiNextdotjs className="text-black dark:text-white" />,
-    },
-    {
+      id: "brain-buster",
       title: "Brain Buster",
       description:
-        "Interactive quiz app with 500+ questions. Featured on Product Hunt with 2K+ MAU and 4.8★ ratings.",
-      tags: ["React", "Firebase", "Animations"],
+        "Interactive quiz app with 500+ questions. Reviewed and rated by top udemy instructor and teaching assistant.",
+      tags: ["React", "useReducer", "Animations"],
       image: "https://brain-buster-six.vercel.app",
       links: {
         live: "https://brain-buster-six.vercel.app",
         code: "https://github.com/angelapeters1601/brain-buster",
       },
-      accentColor: "bg-[#FFCA28]/20", // Quiz yellow
+      accentColor: "bg-[#FFCA28]/20",
       icon: <SiFirebase className="text-[#FFCA28]" />,
     },
+
     {
-      title: "OneFarmTech",
+      id: "portfolio",
+      title: "Portfolio",
       description:
-        "Agricultural SaaS platform serving 200+ farms. Integrated IoT sensors with custom data visualization dashboards.",
-      tags: ["Next.js", "Tailwind", "Node"],
-      image: "https://onefarmtech.com/",
+        "A personal portfolio site built to showcase my projects, skills, and developer journey. Designed with a focus on responsiveness, accessibility, and smooth user experience.",
+
+      tags: [
+        "React.js",
+        "Tailwindcss",
+        "Hooks",
+        "Framer motion",
+        "React awesome reveal",
+        "React-typewriter",
+        "React loading skeleton",
+        "Email.js",
+      ],
+      // image: Portfolio,
       links: {
         live: "https://onefarmtech.com/",
+        code: "https://github.com/angelapeters1601/portfolio",
       },
-      accentColor: "bg-[#47A248]/20", // Farm green
+      accentColor: "bg-[#47A248]/20",
       icon: <SiMongodb className="text-[#47A248]" />,
     },
     {
-      title: "Corley Legal CRM",
+      id: "chefspal",
+      title: "Chef's Pal",
       description:
-        "Confidential client management for law firms. Implemented RBAC and audit trails meeting legal compliance standards.",
-      tags: ["React", "MongoDB", "Node"],
-      image: "https://corley.legal",
+        "Chef’s Pal is a dynamic recipe discovery and meal-planning web application inspired by simple and intuitive cooking experiences. It allows users to explore recipes based on categories such as mealtime, meal type, and dietary preferences (vegan or non-vegan). Users can search for specific meals, save their favorite recipes for quick access, and generate a shopping list automatically populated with essential ingredients.",
+      tags: ["React.js", "CSS modules", "ContextAPI", "Animations", "Email.js"],
+      // image: ChefsPal,
       links: {
-        live: "https://corley.legal",
+        live: "https://onefarmtech.com/",
+        code: "https://github.com/angelapeters1601/chef-sPal",
       },
-      accentColor: "bg-[#764ABC]/20", // Legal purple
-      icon: <SiRedux className="text-[#764ABC]" />,
+      accentColor: "bg-[#47A248]/20",
+      icon: <SiMongodb className="text-[#47A248]" />,
     },
   ];
 
   return (
-    <div
-      className="min-h-screen bg-gradient-to-br from-amber-900
-     via-black to-amber-900 border border-amber-800 rounded-2xl p-8 backdrop-blur-sm shadow-xl"
-    >
-      {/* Animated background elements */}
+    <div className="min-h-screen bg-gradient-to-br from-amber-900 via-black to-amber-900 border border-amber-800 rounded-2xl p-8 backdrop-blur-sm shadow-xl">
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(12)].map((_, i) => (
           <motion.div
@@ -121,7 +177,6 @@ const Projects = () => {
       </div>
 
       <div className="container mx-auto px-6 py-24 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -138,7 +193,6 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -149,14 +203,14 @@ const Projects = () => {
               whileHover={{ y: -5 }}
               className="group relative h-full"
             >
-              {/* Glow effect */}
               <div
                 className={`absolute -inset-1 rounded-2xl ${project.accentColor} blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
               ></div>
 
-              {/* Project card */}
-              <div className="relative h-full bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm border border-amber-200/50 dark:border-amber-800/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                {/* Image placeholder with tech icon */}
+              <Link
+                to={`/projects/${project.id}`}
+                className="relative h-full block bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm border border-amber-200/50 dark:border-amber-800/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 <div
                   className={`h-48 ${project.accentColor} flex items-center justify-center relative overflow-hidden`}
                 >
@@ -164,7 +218,11 @@ const Projects = () => {
                   <div className="relative z-10 text-6xl opacity-20 dark:opacity-30">
                     {project.icon}
                   </div>
-                  <span className="absolute bottom-4 right-4 px-3 py-1 bg-white/90 dark:bg-black/80 text-xs font-medium rounded-full shadow">
+                  <span
+                    className="absolute bottom-4 right-4 px-3 py-1
+                   bg-white/90 dark:bg-black/80 text-xs 
+                   font-medium rounded-full shadow"
+                  >
                     Preview
                   </span>
                 </div>
@@ -206,7 +264,6 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  {/* Tech tags */}
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.tags.map((tag, i) => (
                       <span
@@ -217,42 +274,8 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-
-                  {/* Project details dropdown */}
-                  <div className="border-t border-amber-200/50 dark:border-amber-800/30 pt-4">
-                    <details className="group">
-                      <summary className="flex justify-between items-center cursor-pointer list-none">
-                        <span className="text-sm font-medium text-amber-700 dark:text-amber-300">
-                          Project Details
-                        </span>
-                        <svg
-                          className="w-4 h-4 text-amber-600 dark:text-amber-400 transition-transform group-open:rotate-180"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </summary>
-                      <div className="mt-3 space-y-3 text-sm text-gray-600 dark:text-amber-100/70">
-                        <div>
-                          <span className="font-medium">Challenges:</span> Built
-                          real-time cart updates without page refresh
-                        </div>
-                        <div>
-                          <span className="font-medium">Learned:</span> Redux
-                          optimization techniques
-                        </div>
-                      </div>
-                    </details>
-                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

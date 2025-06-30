@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import {
   FaEnvelope,
   FaPhone,
@@ -10,6 +11,74 @@ import {
 } from "react-icons/fa";
 
 const Contact = () => {
+  const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [notfication, setNotification] = useState();
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+
+  //   emailjs
+  //     .sendForm(
+  //       "service_x0p7qxm",
+  //       "template_rvcihgf",
+  //       form.current,
+  //       "1rD7rvESdpGFoWWTN"
+  //     )
+  //     .then((result) => {
+  //       console.log("SUCCESS!", result.text);
+  //       setIsSuccess(true);
+  //       setIsError(false);
+  //       form.current.reset();
+  //     })
+  //     .catch((error) => {
+  //       console.error("FAILED...", error.text);
+  //       setIsError(true);
+  //       setIsSuccess(false);
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // };
+  // Add this useEffect hook at the top of your component
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setNotification(null);
+
+    try {
+      console.log("Attempting to send..."); // Debug log
+      const response = await emailjs.sendForm(
+        "service_x0p7qxm",
+        "template_rvcihgf",
+        form.current
+      );
+      console.log("Success:", response); // Debug log
+      setNotification({
+        type: "success",
+        message: "Message sent successfully!",
+      });
+      form.current.reset();
+    } catch (error) {
+      console.error("Full Error:", error); // Detailed error log
+      setNotification({
+        type: "error",
+        message: error.text || "Network error. Please try again later.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    emailjs.init("1rD7rvESdpGFoWWTN"); // Your public key
+    console.log("EmailJS initialized"); // Verify in browser console
+  }, []);
+
   return (
     <div className="min-h-screen bg-customBlack text-amber-50">
       {/* Hero Section */}
@@ -37,14 +106,16 @@ const Contact = () => {
               Send Me a Message
             </h2>
 
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-amber-100/80 mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
+                  name="user_name"
                   id="name"
+                  required
                   className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
                   placeholder="John Doe"
                 />
@@ -56,7 +127,9 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
+                  name="user_email"
                   id="email"
+                  required
                   className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
                   placeholder="john@example.com"
                 />
@@ -70,8 +143,10 @@ const Contact = () => {
                   Your Message
                 </label>
                 <textarea
+                  name="message"
                   id="message"
                   rows="5"
+                  required
                   className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
                   placeholder="Tell me about your project..."
                 ></textarea>
@@ -79,11 +154,24 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-amber-700 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center"
+                disabled={isLoading}
+                className="w-full bg-amber-700 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50"
               >
                 <FaPaperPlane className="mr-2" />
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
+
+              {isSuccess && (
+                <div className="p-3 bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-lg text-center">
+                  Message sent successfully!
+                </div>
+              )}
+
+              {isError && (
+                <div className="p-3 bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-lg text-center">
+                  Failed to send. Please try again.
+                </div>
+              )}
             </form>
           </div>
 
