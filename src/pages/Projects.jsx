@@ -31,6 +31,7 @@ const Projects = () => {
         "Tailwind CSS",
         "Supabase",
         "Twillio",
+        "Livechat",
         "Google Cloud Services",
         "React-Router-Dom",
         "Lazy-loading & Suspense",
@@ -58,7 +59,14 @@ const Projects = () => {
         "Redux toolkit",
         "Tailwindcss",
         "Email.Js",
-        "Animations",
+        "Swiper.js",
+        "React-count-up",
+        "React-awesome-reveal",
+        "Optimized images",
+        "Lazy loading",
+        "Cloudinary",
+        "Vite",
+        "Custom API",
       ],
       image: RateItImg,
       links: {
@@ -78,7 +86,8 @@ const Projects = () => {
         "Redux toolkit",
         "Tailwindcss",
         "Vite",
-        "React-Router-dom",
+        "React-Router v6.4",
+        "Geolocation API",
       ],
       image: "https://angelapeters1601.github.io/fast-react-pizza",
       links: {
@@ -93,7 +102,7 @@ const Projects = () => {
       title: "Brain Buster",
       description:
         "Interactive quiz app with 500+ questions. Reviewed and rated by top udemy instructor and teaching assistant.",
-      tags: ["React", "useReducer", "Animations"],
+      tags: ["React", "useReducer", "Framer motion", "Vite"],
       image: "https://brain-buster-six.vercel.app",
       links: {
         live: "https://brain-buster-six.vercel.app",
@@ -132,7 +141,17 @@ const Projects = () => {
       title: "Chef's Pal",
       description:
         "Chef’s Pal is a dynamic recipe discovery and meal-planning web application inspired by simple and intuitive cooking experiences. It allows users to explore recipes based on categories such as mealtime, meal type, and dietary preferences (vegan or non-vegan). Users can search for specific meals, save their favorite recipes for quick access, and generate a shopping list automatically populated with essential ingredients.",
-      tags: ["React.js", "CSS modules", "ContextAPI", "Animations", "Email.js"],
+      tags: [
+        "React.js",
+        "CSS modules",
+        "Bootstrap",
+        "React Hooks",
+        "ContextAPI",
+        "Memoisation",
+        "React Router",
+        "Email.js",
+        "Framer motion",
+      ],
       // image: ChefsPal,
       links: {
         live: "https://onefarmtech.com/",
@@ -220,7 +239,7 @@ const Projects = () => {
                   </div>
                   <span
                     className="absolute bottom-4 right-4 px-3 py-1
-                   bg-white/90 dark:bg-black/80 text-xs 
+                   bg-white/90 dark:bg-black/80 text-xs text-amber-300
                    font-medium rounded-full shadow"
                   >
                     Preview

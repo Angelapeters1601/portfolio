@@ -52,7 +52,6 @@ const Header = () => {
 
   const activeLinkColor = atParallax ? "text-amber-300" : "text-amber-600";
 
-  // Rest of existing animation variants...
   const circleVariants = {
     hidden: {
       clipPath: "circle(0% at 95% 5%)",
@@ -97,13 +96,14 @@ const Header = () => {
           >
             <NavLink
               to="/"
-              className={`text-3xl lg:text-4xl font-bold tracking-widest font-sevillana transition-colors duration-300 ${
-                atParallax
-                  ? "text-white hover:text-gold-300"
-                  : "text-amber-600 hover:text-amber-500"
-              }`}
+              className={`text-4xl lg:text-5xl font-bold tracking-widest 
+                font-sevillana transition-colors duration-300 ${
+                  atParallax
+                    ? "text-white hover:text-gold-300"
+                    : "text-amber-600 hover:text-amber-500"
+                }`}
             >
-              <span>Nwattah</span> Angela.
+              <span>Angela</span>
             </NavLink>
           </motion.div>
 
@@ -149,7 +149,7 @@ const Header = () => {
               className={`p-2 transition-colors ${
                 atParallax
                   ? "text-white hover:text-gold-300"
-                  : "text-customBlack hover:text-amber-500"
+                  : "text-stone-400 hover:text-amber-500"
               }`}
               aria-label="Menu"
             >

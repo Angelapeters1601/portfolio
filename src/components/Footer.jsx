@@ -7,12 +7,50 @@ import {
   FaFacebook,
   FaPhone,
   FaMapMarkerAlt,
-  FaPaintBrush,
   FaCode,
   FaUserTie,
   FaFile,
   FaHome,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+const leftItemVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6 },
+  },
+};
+
+const rightItemVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6 },
+  },
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,18 +58,37 @@ const Footer = () => {
   return (
     <footer className="bg-customBlack border-t border-amber-700/20">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-4 gap-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+        >
           {/* Brand Column */}
-          <div className="md:col-span-2 space-y-6">
-            <h2 className="text-4xl font-bold font-sevillana tracking-wide text-amber-100">
-              Nwattah Angela
-            </h2>
-            <p className="text-amber-50 font-sans text-lg">
+          <motion.div
+            className="md:col-span-2 space-y-6"
+            variants={containerVariants}
+          >
+            <motion.h2
+              variants={leftItemVariants}
+              className="text-4xl font-bold font-sevillana tracking-wide text-amber-100"
+            >
+              Angela Nwattah
+            </motion.h2>
+
+            <motion.p
+              variants={leftItemVariants}
+              className="text-amber-50 font-sans text-lg"
+            >
               Developing intuitive digital experiences that balance aesthetic
               appeal with seamless functionality and accessibility.
-            </p>
+            </motion.p>
 
-            <div className="flex space-x-4 pt-4">
+            <motion.div
+              className="flex space-x-4 pt-4"
+              variants={leftItemVariants}
+            >
               {[
                 {
                   icon: <FaGithub size={20} />,
@@ -59,26 +116,32 @@ const Footer = () => {
                   label: "Email",
                 },
               ].map((social, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-600 hover:text-amber-100 bg-amber-800 hover:bg-amber-800 p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-md"
                   aria-label={social.label}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   {social.icon}
-                </a>
+                </motion.a>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-lilita text-amber-100 uppercase tracking-wider">
+          <motion.div className="space-y-6" variants={containerVariants}>
+            <motion.h3
+              variants={rightItemVariants}
+              className="text-2xl font-lilita text-amber-100 uppercase tracking-wider"
+            >
               <FaCode className="inline mr-2" />
               Explore
-            </h3>
+            </motion.h3>
             <ul className="space-y-4 font-sans text-lg">
               {[
                 {
@@ -102,80 +165,118 @@ const Footer = () => {
                   url: "/projects",
                 },
               ].map((item, index) => (
-                <li key={index}>
+                <motion.li key={index} variants={rightItemVariants}>
                   <a
                     href={item.url}
                     className="text-amber-50 hover:text-amber-200 flex items-center transition-colors duration-300"
                   >
                     {item.icon} {item.text}
                   </a>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-lilita text-amber-100 uppercase tracking-wider">
+          <motion.div className="space-y-6" variants={containerVariants}>
+            <motion.h3
+              variants={itemVariants}
+              className="text-2xl font-lilita text-amber-100 uppercase tracking-wider"
+            >
               <FaMapMarkerAlt className="inline mr-2" />
               Contact
-            </h3>
+            </motion.h3>
             <ul className="space-y-4 font-sans text-lg">
-              <li className="flex items-start">
-                <FaPhone className="text-amber-200 mt-1 mr-3 flex-shrink-0" />
-                <a
-                  href="tel:+2348104352294"
-                  className="text-amber-50 hover:text-amber-200 transition-colors duration-300"
+              {[
+                {
+                  icon: (
+                    <FaPhone className="text-amber-200 mt-1 mr-3 flex-shrink-0" />
+                  ),
+                  content: (
+                    <a
+                      href="tel:+2348104352294"
+                      className="text-amber-50 hover:text-amber-200 transition-colors duration-300"
+                    >
+                      +234 810 435 2294
+                    </a>
+                  ),
+                },
+                {
+                  icon: (
+                    <FaEnvelope className="text-amber-200 mt-1 mr-3 flex-shrink-0" />
+                  ),
+                  content: (
+                    <a
+                      href="mailto:angelnwattah@gmail.com"
+                      className="text-amber-50 hover:text-amber-200 transition-colors duration-300"
+                    >
+                      angelnwattah@gmail.com
+                    </a>
+                  ),
+                },
+                {
+                  icon: (
+                    <FaMapMarkerAlt className="text-amber-200 mt-1 mr-3 flex-shrink-0" />
+                  ),
+                  content: (
+                    <span className="text-amber-50">Lagos, Nigeria</span>
+                  ),
+                },
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  className="flex items-start"
+                  variants={itemVariants}
                 >
-                  +234 810 435 2294
-                </a>
-              </li>
-              <li className="flex items-start">
-                <FaEnvelope className="text-amber-200 mt-1 mr-3 flex-shrink-0" />
-                <a
-                  href="mailto:angelnwattah@gmail.com"
-                  className="text-amber-50 hover:text-amber-200 transition-colors duration-300"
-                >
-                  angelnwattah@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="text-amber-200 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-amber-50">Lagos, Nigeria</span>
-              </li>
+                  {item.icon}
+                  {item.content}
+                </motion.li>
+              ))}
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-amber-700/30 my-12"></div>
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="border-t border-amber-700/30 my-12"
+        />
 
         {/* Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <motion.div
+          className="flex flex-col md:flex-row justify-between items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.7 }}
+        >
           <p className="font-mono text-amber-200 text-sm">
             © {currentYear} Nwattah Angela. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a
-              href="#privacy"
-              className="text-amber-200 hover:text-amber-100 font-sans text-sm transition-colors duration-300"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#terms"
-              className="text-amber-200 hover:text-amber-100 font-sans text-sm transition-colors duration-300"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#cookies"
-              className="text-amber-200 hover:text-amber-100 font-sans text-sm transition-colors duration-300"
-            >
-              Cookies
-            </a>
+            {[
+              { text: "Privacy Policy", url: "#privacy" },
+              { text: "Terms of Service", url: "#terms" },
+              { text: "Cookies", url: "#cookies" },
+            ].map((item, index) => (
+              <motion.a
+                key={index}
+                href={item.url}
+                className="text-amber-200 hover:text-amber-100 font-sans text-sm transition-colors duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 + index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                {item.text}
+              </motion.a>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

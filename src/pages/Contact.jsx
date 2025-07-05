@@ -17,54 +17,23 @@ const Contact = () => {
   const [isError, setIsError] = useState(false);
   const [notfication, setNotification] = useState();
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-
-  //   emailjs
-  //     .sendForm(
-  //       "service_x0p7qxm",
-  //       "template_rvcihgf",
-  //       form.current,
-  //       "1rD7rvESdpGFoWWTN"
-  //     )
-  //     .then((result) => {
-  //       console.log("SUCCESS!", result.text);
-  //       setIsSuccess(true);
-  //       setIsError(false);
-  //       form.current.reset();
-  //     })
-  //     .catch((error) => {
-  //       console.error("FAILED...", error.text);
-  //       setIsError(true);
-  //       setIsSuccess(false);
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // };
-  // Add this useEffect hook at the top of your component
-
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setNotification(null);
 
     try {
-      console.log("Attempting to send..."); // Debug log
       const response = await emailjs.sendForm(
         "service_x0p7qxm",
         "template_rvcihgf",
         form.current
       );
-      console.log("Success:", response); // Debug log
       setNotification({
         type: "success",
         message: "Message sent successfully!",
       });
       form.current.reset();
     } catch (error) {
-      console.error("Full Error:", error); // Detailed error log
       setNotification({
         type: "error",
         message: error.text || "Network error. Please try again later.",
@@ -75,8 +44,8 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    emailjs.init("1rD7rvESdpGFoWWTN"); // Your public key
-    console.log("EmailJS initialized"); // Verify in browser console
+    emailjs.init("1rD7rvESdpGFoWWTN");
+    console.log("EmailJS initialized");
   }, []);
 
   return (

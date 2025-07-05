@@ -2,60 +2,75 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
+import Emma from "../assets/Emma.jpg";
+import John from "../assets/DrJohn.jpg";
+import Yisreal from "../assets/yisreal.jpg";
+import Ocheiga from "../assets/Ocheiga.jpg";
+import Kwado from "../assets/Kwado.jpg";
+import Supreme from "../assets/Supreme.jpg";
 
 const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Michael Johnson",
-      role: "CEO, TechSolutions Inc.",
+      name: "Emmanuel Ugbotor",
+      role: "Senior Fullstack Software Engineer",
       content:
-        "Angela's frontend work on our dashboard increased user engagement by 40%. Her attention to detail and React expertise delivered beyond expectations.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+        "As Angela’s mentor, I’ve had the privilege of watching her evolve into an exceptional frontend developer. Her work on our dashboard which drove a 40% increase in user engagement, demonstrates her mastery of React and meticulous attention to detail. But beyond the technical wins, what impresses me most is her growth mindset. She proactively seeks feedback, implements improvements with precision, and now mentors others with the same patience she once showed as my junior. Angela is the rare developer who balances creativity with discipline. Whether it’s optimizing performance or advocating for UX refinements, she approaches problems with a seasoned perspective that belies her years. Any team would be lucky to have her.",
+      rating: 4,
+      image: Emma,
     },
     {
       id: 2,
-      name: "Sarah Williams",
-      role: "Product Manager, DesignHub",
+      name: "Corley Yisreal Ben",
+      role: "Founder - Corley.legal",
       content:
-        "Working with Angela was a game-changer for our redesign. She implemented complex animations while maintaining perfect performance scores.",
-      rating: 4,
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+        "Working with Angela was a game-changer for our project. She didn’t just deliver a stunning redesign—she built us a complete full-stack application with an intuitive dashboard that exceeded all expectations. Her implementation of complex animations was flawless, yet she maintained perfect performance scores across the board. Beyond the technical brilliance, what stood out was her ability to translate my vision into reality while adding smart improvements I hadn’t even considered. The end result? An application that’s as beautiful as it is powerful, and a client who couldn’t be more pleased.",
+      rating: 5,
+      image: Yisreal,
     },
     {
       id: 3,
-      name: "David Kim",
-      role: "CTO, Startup Ventures",
+      name: "Ocheiga Enoch",
+      role: "Senior Fullstack Developer",
       content:
-        "The React components Angela built became the foundation of our design system. Her code is as clean as her designs.",
+        "Angela brings a rare combination of technical skill and collaborative spirit to every project. She communicates clearly, elevates team dynamics, and has an eye for detail that ensures excellence in execution. Working with her is always a seamless and enjoyable experience, she’s the kind of professional who makes good teams great.",
       rating: 5,
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
+      image: Ocheiga,
     },
     {
       id: 4,
-      name: "Emily Chen",
-      role: "UX Lead, DigitalAgency",
+      name: "Nwattah Chikwado P.",
+      role: "AI/Machine Learning Engineer",
       content:
-        "Angela transformed our legacy jQuery app into a modern React SPA with zero downtime. Exceptional problem-solving skills.",
+        "Angela is a remarkably fast learner who adapts to new challenges effortlessly. Every time I’ve needed her expertise, she’s delivered tailored solutions that exceed expectations, often finding clever fixes for problems we didn’t even realize could be optimized. Her ability to quickly understand complex systems and provide elegant fixes is invaluable.",
       rating: 4,
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
+      image: Kwado,
     },
     {
       id: 5,
-      name: "Robert Taylor",
-      role: "Director, Web Innovations",
+      name: "Supreme Ugoboyobi",
+      role: "Interior decorator",
       content:
-        "Angela's implementation of our e-commerce platform resulted in a 30% increase in conversion rates. Her performance optimizations were remarkable.",
+        "Angela built me a custom admin dashboard for my interior design business that completely changed how I work. Before, I was juggling spreadsheets and missing follow-ups, now everything's organized in one place. The dashboard helps me track clients, manage projects, and even automates parts of my marketing. Within two months, I saw more referrals coming in and my bookings increased by almost 40%. Best part? I spend less time on admin and more time designing.",
       rating: 5,
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
+      image: Supreme,
+    },
+    {
+      id: 6,
+      name: "Dr John Imomoh",
+      role: "Lecturer, University of Benin",
+      content:
+        "When I finally centered a div without Flexbox, Angela made me screenshot it as a trophy 😂. She celebrates small wins but also gently pushes me - last week she had me rebuild Netflix's navbar (it's harder than it looks!). Baby steps feel like victories with her.",
+      rating: 5,
+      image: John,
     },
   ];
 
   const [activeTestimonial, setActiveTestimonial] = useState(testimonials[0]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-900/10 via-black to-amber-900/5 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen  bg-gradient-to-br from-amber-900/10 via-black to-amber-900/5 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -153,30 +168,34 @@ const Testimonials = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mb-16"
+          className="mb-16 w-full"
         >
-          <div className="mb-8">
-            <Marquee speed={40} gradient={false} pauseOnHover>
+          <div className="mb-8 w-full overflow-hidden relative">
+            {/* Gradient fade edges */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-amber-900/70 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-amber-900/70 to-transparent z-10 pointer-events-none" />
+
+            <Marquee speed={40} gradient={false} pauseOnHover className="py-2">
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
                   onClick={() => setActiveTestimonial(testimonial)}
-                  className={`mx-4 cursor-pointer transition-all ${
+                  className={`mx-3 cursor-pointer transition-all duration-300 ${
                     activeTestimonial.id === testimonial.id
-                      ? "scale-110 opacity-100"
-                      : "opacity-70 hover:opacity-90"
+                      ? "scale-105 opacity-100 shadow-lg"
+                      : "opacity-80 hover:opacity-95"
                   }`}
                 >
-                  <div className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-xl p-6 backdrop-blur-sm w-64 h-48 flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-xl p-6 backdrop-blur-sm w-64 h-48 flex flex-col justify-between hover:border-amber-600/30 transition-colors">
                     <FaQuoteLeft className="text-amber-400 text-xl" />
                     <p className="text-sm text-amber-100/80 line-clamp-4">
                       {testimonial.content}
                     </p>
                     <div>
-                      <h4 className="text-amber-100 font-medium">
+                      <h4 className="text-amber-100  font-medium">
                         {testimonial.name}
                       </h4>
-                      <p className="text-xs text-amber-300">
+                      <p className="text-xs text-amber-300 mt-1">
                         {testimonial.role}
                       </p>
                     </div>
@@ -186,7 +205,6 @@ const Testimonials = () => {
             </Marquee>
           </div>
         </motion.div>
-
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -207,7 +225,7 @@ const Testimonials = () => {
             <div className="text-amber-100/80 text-sm">Performance Boost</div>
           </div>
           <div className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-xl p-6 text-center backdrop-blur-sm">
-            <div className="text-3xl font-bold text-amber-300 mb-2">5+</div>
+            <div className="text-3xl font-bold text-amber-300 mb-2">4+</div>
             <div className="text-amber-100/80 text-sm">Years Experience</div>
           </div>
         </motion.div>

@@ -1,25 +1,99 @@
-import "../App.css";
+import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Stars, Float } from "@react-three/drei";
 import { Typewriter } from "react-simple-typewriter";
-import Testimonials from "../components/Testimonials";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
+import Testimonials from "../components/Testimonials";
+import Me from "../assets/me.jpg";
+
+// 3D React Logo Component
+const ReactLogo = () => {
+  const ref = useRef();
+
+  useFrame((state) => {
+    ref.current.position.y = Math.sin(state.clock.getElapsedTime()) * 0.5;
+    ref.current.rotation.y += 0.01;
+  });
+
+  return (
+    <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
+      <mesh ref={ref} position={[-3, -2, 0]}>
+        <sphereGeometry args={[0.5, 32, 32]} />
+        <meshStandardMaterial
+          color="#61DAFB"
+          emissive="#61DAFB"
+          emissiveIntensity={0.5}
+          roughness={0.5}
+          metalness={0.8}
+        />
+      </mesh>
+    </Float>
+  );
+};
+
+// 3D Next.js Logo Component
+const NextLogo = () => {
+  const ref = useRef();
+
+  useFrame((state) => {
+    ref.current.rotation.y = state.clock.getElapsedTime();
+  });
+
+  return (
+    <Float speed={3} rotationIntensity={1} floatIntensity={1}>
+      <mesh ref={ref} position={[3, 2, 0]}>
+        <boxGeometry args={[0.8, 0.8, 0.8]} />
+        <meshStandardMaterial
+          color="#ffffff"
+          emissive="#000000"
+          emissiveIntensity={0.5}
+          roughness={0.3}
+          metalness={0.7}
+        />
+      </mesh>
+    </Float>
+  );
+};
 
 const Home = () => {
   return (
-    <div className="parallax-wrapper" id="parallax">
-      <div className="parallax-bg" />
+    <div className="bg-customBlack">
+      {/* 3D Background Canvas */}
+      <div className="fixed inset-0 -z-10">
+        <Canvas>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <Stars
+            radius={2}
+            depth={30}
+            count={2000}
+            factor={4}
+            saturation={0}
+            fade
+            speed={1}
+          />
+          <ReactLogo />
+          <NextLogo />
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            enableRotate={false}
+          />
+        </Canvas>
+      </div>
 
-      <div className="content">
-        {/* Hero Section - Side by Side Layout */}
+      {/* Page Content */}
+      <div className="relative z-10 content">
+        {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col mt-20 lg:flex-row items-center justify-between min-h-[80vh] px-6 lg:px-12 xl:px-24 py-16 gap-12"
+          className="flex flex-col mt-20 lg:flex-row items-center justify-between min-h-[100vh] px-6 lg:px-12 xl:px-24 py-16 gap-12"
         >
-          {/* Profile Image - More Dramatic Placement */}
+          {/* Image Column */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -28,22 +102,18 @@ const Home = () => {
           >
             <div className="relative group">
               {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-amber-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-90 transition-all duration-500 -z-10" />
+              <div className="absolute -inset-4 bg-amber-500/20 rounded-full blur-xl opacity-70 group-hover:opacity-90 transition-all duration-500" />
 
-              {/* Image Container with Border Animation */}
+              {/* Image Container */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-amber-400/30 hover:border-amber-400/50 transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                  src={Me}
                   alt="Angela's Profile"
                   className="w-full max-w-md h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-
-                {/* Decorative Elements */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-amber-300/50 rounded-lg -z-10" />
-                <div className="absolute -top-4 -left-4 w-16 h-16 border-2 border-amber-200/30 rounded-full -z-10" />
               </div>
 
-              {/* Floating Tech Icons */}
+              {/* 2D Animated Icons */}
               <motion.div
                 className="absolute -bottom-8 -left-8 text-3xl text-amber-300"
                 animate={{ y: [0, -10, 0] }}
@@ -61,7 +131,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Text Content - More Dynamic Layout */}
+          {/* Text Column */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -88,8 +158,6 @@ const Home = () => {
                     "UI/UX Architect",
                     "Performance Optimizer",
                     "Clean Code Advocate",
-                    "Interactive Design Expert",
-                    "Frontend Technical Lead",
                   ]}
                   loop={0}
                   cursor
@@ -101,28 +169,28 @@ const Home = () => {
               </p>
             </div>
 
-            <p className="text-lg text-amber-100/80">
+            <p className="text-lg font-sans tracking-wider text-amber-100/80">
               I build exceptional digital experiences that combine cutting-edge
               technology with stunning design. My solutions are fast,
               accessible, and deliver measurable results.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <motion.div whileHover={{ y: -3 }}>
-                <Link
-                  to="/projects"
+              <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.95 }}>
+                <a
+                  href="#projects"
                   className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-lg hover:shadow-amber-500/20"
                 >
                   View Projects
-                </Link>
+                </a>
               </motion.div>
-              <motion.div whileHover={{ y: -3 }}>
-                <Link
-                  to="/contact"
+              <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.95 }}>
+                <a
+                  href="#contact"
                   className="inline-block border-2 border-amber-500 text-amber-300 font-medium py-3 px-8 rounded-full hover:bg-amber-900/30 transition-colors"
                 >
                   Contact Me
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>
@@ -135,6 +203,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="py-20 bg-gradient-to-b from-transparent to-amber-900/5"
+          id="about"
         >
           <div className="max-w-6xl mx-auto px-6 text-center">
             <motion.div
@@ -150,7 +219,7 @@ const Home = () => {
               <div className="w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
             </motion.div>
 
-            <p className="text-xl text-amber-100/80 max-w-4xl mx-auto mb-12">
+            <p className="text-xl font-sans text-amber-100/80 max-w-4xl mx-auto mb-12">
               With over 4 years of experience building responsive, performant
               web applications, I bring both technical expertise and creative
               vision to every project.
@@ -163,14 +232,15 @@ const Home = () => {
                 "Next.js",
                 "TypeScript",
                 "Tailwind",
-                "Figma",
+                "Framer Motion",
+                "Three.js",
                 "Node.js",
-                "Redux",
-                "Animation",
+                "GraphQL",
               ].map((skill) => (
                 <motion.div
                   key={skill}
                   whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="px-4 py-2 bg-amber-900/30 border border-amber-700/50 rounded-full text-amber-200 text-sm font-mono"
                 >
                   {skill}

@@ -57,7 +57,7 @@ const About = () => {
     {
       name: "Redux Toolkit",
       icon: <SiRedux className="text-[#764ABC]" />,
-      progress: 86,
+      progress: 90,
     },
     {
       name: "Tailwind CSS",
@@ -67,7 +67,7 @@ const About = () => {
     {
       name: "Bootstrap",
       icon: <SiBootstrap className="text-[#7952B3]" />,
-      progress: 89,
+      progress: 95,
     },
     {
       name: "Material UI",
@@ -77,7 +77,7 @@ const About = () => {
     {
       name: "Styled Components",
       icon: <SiStyledcomponents className="text-[#DB7093]" />,
-      progress: 82,
+      progress: 85,
     },
     {
       name: "Figma",
@@ -88,17 +88,22 @@ const About = () => {
     {
       name: "MongoDB",
       icon: <SiMongodb className="text-[#47A248]" />,
-      progress: 78,
+      progress: 85,
+    },
+    {
+      name: "NodeJs",
+      icon: <FaNodeJs className="text-[#E34F26]" />,
+      progress: 90,
     },
     {
       name: "Express.js",
       icon: <SiExpress className="text-white" />,
-      progress: 76,
+      progress: 80,
     },
     {
       name: "Supabase",
       icon: <SiSupabase className="text-[#3ECF8E]" />,
-      progress: 75,
+      progress: 92,
     },
     {
       name: "Responsive Design",
@@ -108,7 +113,7 @@ const About = () => {
     {
       name: "Animations",
       icon: <FaReact className="text-[#61DAFB]" />,
-      progress: 84,
+      progress: 90,
     },
   ];
 
@@ -153,11 +158,6 @@ const About = () => {
         transition={{ duration: 0.8 }}
         className="relative pt-28 pb-16 text-center"
       >
-        {/* <div
-          className="absolute inset-0 
-        bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]
-         from-amber-900/10 via-black to-black opacity-70"
-        ></div> */}
         <div className="container mt-20 mx-auto px-6 relative z-10">
           <h1
             className="text-5xl md:text-6xl font-bold font-playfair
@@ -166,11 +166,13 @@ const About = () => {
             About <span className="text-amber-300">Me</span>
           </h1>
           <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
-            Frontend Developer specializing in React, Next.js, and modern UI/UX
-            design. I build <span className="text-amber-300">fast</span>,{" "}
+            Frontend Developer specializing in modern frameworks to deliver
+            exquisite digital experiences. I build{" "}
+            <span className="text-amber-300">fast</span>,{" "}
             <span className="text-amber-300">scalable</span>, and{" "}
             <span className="text-amber-300">visually stunning</span> web
-            applications.
+            applications with a strong focus on performance and user-centered
+            design.
           </p>
         </div>
       </motion.section>
@@ -233,17 +235,28 @@ const About = () => {
           </h2>
           <div className="space-y-4 text-amber-100/90">
             <p>
-              I'm <span className="text-amber-300">Nwattah Angela</span>, a
+              I'm <span className="text-amber-300">Angela S. Nwattah</span>, a
               passionate Frontend Developer with expertise in building modern,
-              responsive, and high-performance web applications.
+              responsive, user friendly and high-performance web applications.
             </p>
             <p>
               My journey in web development started with a love for design and
               evolved into a deep appreciation for clean, efficient code. I
-              specialize in <span className="text-amber-300">React.js</span>,{" "}
+              specialize in <span className="text-amber-300">HTML</span>,{" "}
+              <span className="text-amber-300">CSS</span>,{" "}
+              <span className="text-amber-300">JavaScript</span>,{" "}
+              <span className="text-amber-300">React.js</span>,{" "}
+              <span className="text-amber-300">Redux</span>,{" "}
+              <span className="text-amber-300">Redux Toolkit</span>,{" "}
               <span className="text-amber-300">Next.js</span>, and{" "}
               <span className="text-amber-300">Tailwind CSS</span>, creating
               seamless user experiences.
+            </p>
+
+            <p>
+              I love learning new languages and tools, it keeps me growing and
+              adaptable. I believe every new language teaches one a new way of
+              thinking, and thats exciting to me 😊
             </p>
             <p>
               When I'm not coding, I enjoy contributing to open-source projects,

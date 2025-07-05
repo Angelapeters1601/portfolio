@@ -12,10 +12,13 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
+    "@react-three/drei": "^10.4.4",
+    "@react-three/fiber": "^9.2.0",
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.10",
+    "aos": "^2.3.4",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^12.18.1",
+    "framer-motion": "^12.23.0",
     "hamburger-react": "^2.5.2",
     "react": "^19.1.0",
     "react-awesome-reveal": "^4.3.1",
@@ -27,6 +30,7 @@
     "react-router-dom": "^7.6.2",
     "react-simple-typewriter": "^5.0.1",
     "tailwindcss": "^4.1.10",
+    "three": "^0.178.0",
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {

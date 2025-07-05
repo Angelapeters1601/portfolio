@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sevillana&display=swap");
-
 @import "tailwindcss";
 
 @theme {
@@ -18,34 +17,41 @@
     /* Light mode colors */
     --customBlack: #111111;
     --customGray: #333333;
-    --customBlue: #3b82f6;
     --customWhite: #ffffff;
     --customOffWhite: #f9fafb;
-
-    /* Warm accents (new) */
     --customRed: #dc2626;
-    --customGreen: #a8f5c4;
     --customGold: #d97706;
-    --customPink: #db2777;
   }
 
   .dark {
-    /* Dark mode reverses */
+    /* Dark mode colors */
     --customBlack: #e5e7eb;
-    --customGray: #9ca3af;
-    --customBlue: #818cf8;
     --customWhite: #1f2937;
     --customOffWhite: #374151;
-
-    /* Dark mode accents (slightly muted) */
-    --customRed: #ef4444;
-    --customGreen: #22c55e;
-    --customGold: #f59e0b;
-    --customPink: #ec4899;
   }
 }
 
 @layer utilities {
+  /* Radial gradient utilities */
+  .bg-radial-light {
+    background-image: radial-gradient(
+      circle at center,
+      rgba(53, 24, 2, 0.2) 0%,
+      rgba(22, 22, 22, 0.8) 50%,
+      rgba(10, 10, 10, 1) 100%
+    );
+  }
+
+  .bg-radial {
+    background-image: radial-gradient(
+      circle at center,
+      rgba(180, 83, 9, 0.3) 0%,
+      rgba(5, 5, 5, 0.9) 70%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+
+  /* Color utilities */
   .bg-customBlack {
     background-color: var(--customBlack);
   }
@@ -64,16 +70,6 @@
   }
   .border-customGray {
     border-color: var(--customGray);
-  }
-
-  .bg-customBlue {
-    background-color: var(--customBlue);
-  }
-  .text-customBlue {
-    color: var(--customBlue);
-  }
-  .border-customBlue {
-    border-color: var(--customBlue);
   }
 
   .bg-customWhite {
@@ -95,6 +91,7 @@
   .border-customOffWhite {
     border-color: var(--customOffWhite);
   }
+
   .bg-customRed {
     background-color: var(--customRed);
   }
@@ -103,16 +100,6 @@
   }
   .border-customRed {
     border-color: var(--customRed);
-  }
-
-  .bg-customGreen {
-    background-color: var(--customGreen);
-  }
-  .text-customGreen {
-    color: var(--customGreen);
-  }
-  .border-customGreen {
-    border-color: var(--customGreen);
   }
 
   .bg-customGold {
@@ -124,14 +111,18 @@
   .border-customGold {
     border-color: var(--customGold);
   }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .bg-customPink {
-    background-color: var(--customPink);
-  }
-  .text-customPink {
-    color: var(--customPink);
-  }
-  .border-customPink {
-    border-color: var(--customPink);
-  }
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
 }
