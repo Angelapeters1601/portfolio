@@ -10,7 +10,6 @@ const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Resume = lazy(() => import("./pages/Resume"));
-const Designs = lazy(() => import("./components/Designs"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 // Scroll to top on route change
@@ -69,7 +68,6 @@ function App() {
             <Route path="projects/:id" element={<ProjectDetails />} />
             <Route path="about" element={<About darkMode={darkMode} />} />
             <Route path="contact" element={<Contact darkMode={darkMode} />} />
-            <Route path="design" element={<Designs darkMode={darkMode} />} />
             <Route path="resume" element={<Resume darkMode={darkMode} />} />
             <Route path="*" element={<NotFoundPage darkMode={darkMode} />} />
           </Route>

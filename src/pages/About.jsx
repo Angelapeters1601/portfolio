@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Reveal } from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -21,6 +23,51 @@ import {
   SiExpress,
   SiSupabase,
 } from "react-icons/si";
+
+// Custom animations
+const customFadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const customFadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const customFadeInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const customScaleIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 const About = () => {
   const techStack = [
@@ -152,120 +199,122 @@ const About = () => {
       </div>
 
       {/* Hero Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative pt-28 pb-16 text-center"
-      >
-        <div className="container mt-20 mx-auto px-6 relative z-10">
-          <h1
-            className="text-5xl md:text-6xl font-bold font-playfair
-           text-amber-100 mb-4"
-          >
-            About <span className="text-amber-300">Me</span>
-          </h1>
-          <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
-            Frontend Developer specializing in modern frameworks to deliver
-            exquisite digital experiences. I build{" "}
-            <span className="text-amber-300">fast</span>,{" "}
-            <span className="text-amber-300">scalable</span>, and{" "}
-            <span className="text-amber-300">visually stunning</span> web
-            applications with a strong focus on performance and user-centered
-            design.
-          </p>
-        </div>
-      </motion.section>
+      <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
+        <section className="relative pt-28 pb-16 text-center">
+          <div className="container mt-20 mx-auto px-6 relative z-10">
+            <h1 className="text-5xl md:text-6xl font-bold font-playfair text-amber-100 mb-4">
+              About <span className="text-amber-300">Me</span>
+            </h1>
+            <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
+              Frontend Developer specializing in modern frameworks to deliver
+              exquisite digital experiences. I build{" "}
+              <span className="text-amber-300">fast</span>,{" "}
+              <span className="text-amber-300">scalable</span>, and{" "}
+              <span className="text-amber-300">visually stunning</span> web
+              applications with a strong focus on performance and user-centered
+              design.
+            </p>
+          </div>
+        </section>
+      </Reveal>
 
       {/* Tech Stack Grid */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="container mx-auto px-6 py-12 relative z-10"
-      >
-        <h2 className="text-3xl font-lilita text-amber-100 mb-8 text-center">
-          My <span className="text-amber-300">Tech Stack</span>
-        </h2>
+      <section className="container mx-auto px-6 py-12 relative z-10">
+        <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
+          <h2 className="text-3xl font-lilita text-amber-100 mb-8 text-center">
+            My <span className="text-amber-300">Tech Stack</span>
+          </h2>
+        </Reveal>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {techStack.map((tech, index) => (
-            <motion.div
+            <Reveal
               key={index}
-              whileHover={{ y: -5, scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-xl p-6 backdrop-blur-sm shadow-lg flex flex-col items-center"
+              keyframes={customScaleIn}
+              duration={600}
+              delay={index * 50}
+              triggerOnce
             >
-              <div className="text-4xl mb-3">{tech.icon}</div>
-              <h3 className="text-amber-100 font-medium text-center mb-2">
-                {tech.name}
-              </h3>
+              <motion.div
+                whileHover={{ y: -5, scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-xl p-6 backdrop-blur-sm shadow-lg flex flex-col items-center"
+              >
+                <div className="text-4xl mb-3">{tech.icon}</div>
+                <h3 className="text-amber-100 font-medium text-center mb-2">
+                  {tech.name}
+                </h3>
 
-              {/* Progress Bar */}
-              <div className="w-full bg-amber-900/20 rounded-full h-2 mb-2">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${tech.progress}%` }}
-                  transition={{ duration: 1.5, delay: index * 0.05 }}
-                  className="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"
-                />
-              </div>
-              <span className="text-amber-300 text-sm font-mono">
-                {tech.progress}%
-              </span>
-            </motion.div>
+                {/* Progress Bar */}
+                <div className="w-full bg-amber-900/20 rounded-full h-2 mb-2">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${tech.progress}%` }}
+                    transition={{ duration: 1.5, delay: index * 0.05 }}
+                    className="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"
+                  />
+                </div>
+                <span className="text-amber-300 text-sm font-mono">
+                  {tech.progress}%
+                </span>
+              </motion.div>
+            </Reveal>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* About Me Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="container mx-auto px-6 py-12 relative z-10"
-      >
-        <div
-          className="
-        bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-2xl p-8 backdrop-blur-sm shadow-xl"
-        >
-          <h2 className="text-3xl font-lilita text-amber-100 mb-6">
-            Who <span className="text-amber-300">I Am</span>
-          </h2>
-          <div className="space-y-4 text-amber-100/90">
-            <p>
-              I'm <span className="text-amber-300">Angela S. Nwattah</span>, a
-              passionate Frontend Developer with expertise in building modern,
-              responsive, user friendly and high-performance web applications.
-            </p>
-            <p>
-              My journey in web development started with a love for design and
-              evolved into a deep appreciation for clean, efficient code. I
-              specialize in <span className="text-amber-300">HTML</span>,{" "}
-              <span className="text-amber-300">CSS</span>,{" "}
-              <span className="text-amber-300">JavaScript</span>,{" "}
-              <span className="text-amber-300">React.js</span>,{" "}
-              <span className="text-amber-300">Redux</span>,{" "}
-              <span className="text-amber-300">Redux Toolkit</span>,{" "}
-              <span className="text-amber-300">Next.js</span>, and{" "}
-              <span className="text-amber-300">Tailwind CSS</span>, creating
-              seamless user experiences.
-            </p>
+      <section className="container mx-auto px-6 py-12 relative z-10">
+        <Reveal keyframes={customFadeIn} duration={800} delay={200} triggerOnce>
+          <div className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-2xl p-8 backdrop-blur-sm shadow-xl">
+            <h2 className="text-3xl font-lilita text-amber-100 mb-6">
+              Who <span className="text-amber-300">I Am</span>
+            </h2>
+            <Reveal
+              keyframes={customFadeInLeft}
+              duration={600}
+              cascade
+              damping={0.1}
+              triggerOnce
+            >
+              <div className="space-y-4 text-amber-100/90">
+                <p>
+                  I'm <span className="text-amber-300">Angela S. Nwattah</span>,
+                  a passionate Frontend Developer with expertise in building
+                  modern, responsive, user friendly and high-performance web
+                  applications.
+                </p>
+                <p>
+                  My journey in web development started with a love for design
+                  and evolved into a deep appreciation for clean, efficient
+                  code. I specialize in{" "}
+                  <span className="text-amber-300">HTML</span>,{" "}
+                  <span className="text-amber-300">CSS</span>,{" "}
+                  <span className="text-amber-300">JavaScript</span>,{" "}
+                  <span className="text-amber-300">React.js</span>,{" "}
+                  <span className="text-amber-300">Redux</span>,{" "}
+                  <span className="text-amber-300">Redux Toolkit</span>,{" "}
+                  <span className="text-amber-300">Next.js</span>, and{" "}
+                  <span className="text-amber-300">Tailwind CSS</span>, creating
+                  seamless user experiences.
+                </p>
 
-            <p>
-              I love learning new languages and tools, it keeps me growing and
-              adaptable. I believe every new language teaches one a new way of
-              thinking, and thats exciting to me 😊
-            </p>
-            <p>
-              When I'm not coding, I enjoy contributing to open-source projects,
-              experimenting with new animations, and mentoring aspiring
-              developers.
-            </p>
+                <p>
+                  I love learning new languages and tools, it keeps me growing
+                  and adaptable. I believe every new language teaches one a new
+                  way of thinking, and thats exciting to me 😊
+                </p>
+                <p>
+                  When I'm not coding, I enjoy contributing to open-source
+                  projects, experimenting with new animations, and mentoring
+                  aspiring developers.
+                </p>
+              </div>
+            </Reveal>
           </div>
-        </div>
-      </motion.section>
+        </Reveal>
+      </section>
     </div>
   );
 };

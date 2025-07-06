@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Reveal } from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -13,7 +15,6 @@ import {
   FaBookOpen,
   FaExclamationTriangle,
 } from "react-icons/fa";
-
 import {
   SiTailwindcss,
   SiMongodb,
@@ -28,6 +29,51 @@ import RateItImg from "../assets/rate-it.png";
 import PizzaImg from "../assets/pizza.jpeg";
 import BrainBusterImg from "../assets/brain-buster.png";
 import CorleyImg from "../assets/corley-legal.png";
+
+// Custom animations
+const customFadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const customFadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const customFadeInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const customScaleIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -264,129 +310,198 @@ const ProjectDetails = () => {
   return (
     <div className="min-h-screen mt-20 bg-gradient-to-br from-amber-900 via-black to-amber-900 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white/10 backdrop-blur-sm border border-amber-800/30 rounded-2xl p-8 shadow-xl">
-          {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold font-playfair text-amber-100 mb-2">
-              {project.title}
-            </h1>
-            <div className="flex space-x-4">
-              {project.links.code && (
-                <a
-                  href={project.links.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-amber-300 hover:text-amber-200"
-                >
-                  <FaGithub className="mr-2" /> Code
-                </a>
-              )}
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-amber-300 hover:text-amber-200"
+        <Reveal keyframes={customScaleIn} duration={800} triggerOnce>
+          <div className="bg-white/10 backdrop-blur-sm border border-amber-800/30 rounded-2xl p-8 shadow-xl">
+            {/* Header */}
+            <div className="mb-8">
+              <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
+                <h1 className="text-4xl md:text-5xl font-bold font-playfair text-amber-100 mb-2">
+                  {project.title}
+                </h1>
+              </Reveal>
+              <Reveal
+                keyframes={customFadeIn}
+                duration={800}
+                delay={200}
+                triggerOnce
               >
-                <FaExternalLinkAlt className="mr-2" /> Live Demo
-              </a>
-            </div>
-          </div>
-
-          {/* Project content */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <img
-                src={project.image}
-                alt={`${project.title} screenshot`}
-                className="h-80 w-full object-cover p-2 bg-amber-900/10 rounded-xl"
-              />
-
-              <div className="mb-6">
-                <h2 className="text-2xl mt-2 font-bold text-amber-100 mb-3 flex items-center">
-                  <FaTools className="mr-2 text-amber-300" /> Tech Stack
-                </h2>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-amber-900/30 text-amber-200 rounded-full flex items-center"
+                <div className="flex space-x-4">
+                  {project.links.code && (
+                    <a
+                      href={project.links.code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-amber-300 hover:text-amber-200"
                     >
-                      {tag === "React" && (
-                        <FaReact className="mr-1 text-[#61DAFB]" />
-                      )}
-                      {tag === "Redux Toolkit" && (
-                        <SiRedux className="mr-1 text-[#764ABC]" />
-                      )}
-                      {tag === "Tailwindcss" && (
-                        <SiTailwindcss className="mr-1 text-[#38BDF8]" />
-                      )}
-                      {tag === "Next.js" && <SiNextdotjs className="mr-1" />}
-                      {tag === "Firebase" && (
-                        <SiFirebase className="mr-1 text-[#FFCA28]" />
-                      )}
-                      {tag === "MongoDB" && (
-                        <SiMongodb className="mr-1 text-[#47A248]" />
-                      )}
-                      {tag === "Node.js" && (
-                        <FaNodeJs className="mr-1 text-[#68A063]" />
-                      )}
-                      {tag === "Figma" && (
-                        <FaFigma className="mr-1 text-[#F24E1E]" />
-                      )}
-                      {tag}
-                    </span>
-                  ))}
+                      <FaGithub className="mr-2" /> Code
+                    </a>
+                  )}
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-amber-300 hover:text-amber-200"
+                  >
+                    <FaExternalLinkAlt className="mr-2" /> Live Demo
+                  </a>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
-            <div>
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-amber-100 mb-3 flex items-center">
-                  <MdDescription className="mr-2 text-amber-300" /> Description
-                </h2>
-                <p className="text-amber-100/80">{project.description}</p>
-              </div>
+            {/* Project content */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <Reveal keyframes={customFadeInLeft} duration={800} triggerOnce>
+                  <img
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    className="h-80 w-full object-cover p-2 bg-amber-900/10 rounded-xl"
+                  />
+                </Reveal>
 
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-amber-100 mb-3 flex items-center">
-                  <MdOutlineFeaturedPlayList className="mr-2 text-amber-300" />{" "}
-                  Key Features
-                </h2>
-                <ul className="list-disc pl-5 text-amber-100/80 space-y-2">
-                  {project.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <FaListUl className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-amber-200 mb-2 flex items-center">
-                    <FaExclamationTriangle className="mr-2 text-amber-300" />{" "}
-                    Challenges
-                  </h3>
-                  <p className="text-amber-100/80 flex items-start">
-                    <FaCode className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
-                    {project.challenges}
-                  </p>
+                <div className="mb-6">
+                  <Reveal
+                    keyframes={customFadeInLeft}
+                    duration={800}
+                    delay={200}
+                    triggerOnce
+                  >
+                    <h2 className="text-2xl mt-2 font-bold text-amber-100 mb-3 flex items-center">
+                      <FaTools className="mr-2 text-amber-300" /> Tech Stack
+                    </h2>
+                  </Reveal>
+                  <Reveal
+                    keyframes={customFadeInLeft}
+                    duration={800}
+                    delay={300}
+                    triggerOnce
+                    className="flex flex-wrap gap-2"
+                  >
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 mt-2 bg-amber-900/30 text-amber-200 rounded-full flex items-center"
+                      >
+                        {tag === "React" && (
+                          <FaReact className="mr-1 text-[#61DAFB]" />
+                        )}
+                        {tag === "Redux Toolkit" && (
+                          <SiRedux className="mr-1 text-[#764ABC]" />
+                        )}
+                        {tag === "Tailwindcss" && (
+                          <SiTailwindcss className="mr-1 text-[#38BDF8]" />
+                        )}
+                        {tag === "Next.js" && <SiNextdotjs className="mr-1" />}
+                        {tag === "Firebase" && (
+                          <SiFirebase className="mr-1 text-[#FFCA28]" />
+                        )}
+                        {tag === "MongoDB" && (
+                          <SiMongodb className="mr-1 text-[#47A248]" />
+                        )}
+                        {tag === "Node.js" && (
+                          <FaNodeJs className="mr-1 text-[#68A063]" />
+                        )}
+                        {tag === "Figma" && (
+                          <FaFigma className="mr-1 text-[#F24E1E]" />
+                        )}
+                        {tag}
+                      </span>
+                    ))}
+                  </Reveal>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-amber-200 mb-2 flex items-center">
-                    <FaLightbulb className="mr-2 text-amber-300" /> Learnings
-                  </h3>
-                  <p className="text-amber-100/80 flex items-start">
-                    <FaBookOpen className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
-                    {project.learnings}
-                  </p>
+              </div>
+
+              <div>
+                <div className="mb-6">
+                  <Reveal
+                    keyframes={customFadeInRight}
+                    duration={800}
+                    triggerOnce
+                  >
+                    <h2 className="text-2xl font-bold text-amber-100 mb-3 flex items-center">
+                      <MdDescription className="mr-2 text-amber-300" />{" "}
+                      Description
+                    </h2>
+                  </Reveal>
+                  <Reveal
+                    keyframes={customFadeInRight}
+                    duration={800}
+                    delay={200}
+                    triggerOnce
+                  >
+                    <p className="text-amber-100/80">{project.description}</p>
+                  </Reveal>
+                </div>
+
+                <div className="mb-6">
+                  <Reveal
+                    keyframes={customFadeInRight}
+                    duration={800}
+                    delay={300}
+                    triggerOnce
+                  >
+                    <h2 className="text-2xl font-bold text-amber-100 mb-3 flex items-center">
+                      <MdOutlineFeaturedPlayList className="mr-2 text-amber-300" />{" "}
+                      Key Features
+                    </h2>
+                  </Reveal>
+                  <Reveal
+                    keyframes={customFadeInRight}
+                    duration={800}
+                    delay={400}
+                    triggerOnce
+                  >
+                    <ul className="list-disc pl-5 text-amber-100/80 space-y-2">
+                      {project.features.map((feature, i) => (
+                        <li key={i} className="flex items-start">
+                          <FaListUl className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                </div>
+
+                <div className="space-y-4">
+                  <Reveal
+                    keyframes={customFadeInRight}
+                    duration={800}
+                    delay={500}
+                    triggerOnce
+                  >
+                    <div>
+                      <h3 className="text-xl font-semibold text-amber-200 mb-2 flex items-center">
+                        <FaExclamationTriangle className="mr-2 text-amber-300" />{" "}
+                        Challenges
+                      </h3>
+                      <p className="text-amber-100/80 flex items-start">
+                        <FaCode className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
+                        {project.challenges}
+                      </p>
+                    </div>
+                  </Reveal>
+                  <Reveal
+                    keyframes={customFadeInRight}
+                    duration={800}
+                    delay={600}
+                    triggerOnce
+                  >
+                    <div>
+                      <h3 className="text-xl font-semibold text-amber-200 mb-2 flex items-center">
+                        <FaLightbulb className="mr-2 text-amber-300" />{" "}
+                        Learnings
+                      </h3>
+                      <p className="text-amber-100/80 flex items-start">
+                        <FaBookOpen className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
+                        {project.learnings}
+                      </p>
+                    </div>
+                  </Reveal>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );
