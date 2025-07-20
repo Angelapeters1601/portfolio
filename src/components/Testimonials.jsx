@@ -99,7 +99,7 @@ const Testimonials = () => {
   const { ref: statsRef, inView } = useInView({ triggerOnce: true });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-900/10 via-black to-amber-900/5 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-amber-900/10 via-black to-amber-900/5 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -125,8 +125,8 @@ const Testimonials = () => {
               ease: "easeInOut",
             }}
             style={{
-              width: `${Math.random() * 300 + 100}px`,
-              height: `${Math.random() * 300 + 100}px`,
+              width: `${Math.random() * 200 + 50}px`,
+              height: `${Math.random() * 200 + 50}px`,
             }}
           />
         ))}
@@ -135,40 +135,42 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-2xl font-bold font-playfair text-amber-100 mb-4">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-playfair text-amber-100 mb-2 sm:mb-4">
               Client <span className="text-amber-300">Testimonials</span>
             </h2>
-            <p className="text-xl text-amber-100/80 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-amber-100/80 max-w-2xl mx-auto">
               What colleagues and clients say about working with me
             </p>
           </div>
         </Reveal>
 
-        {/* Featured Testimonial */}
+        {/* Featured Testimonial*/}
         <Reveal keyframes={customScaleIn} duration={800} triggerOnce>
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-amber-900/20 via-black/50 to-amber-900/10 border border-amber-800/30 rounded-2xl p-8 md:p-10 backdrop-blur-sm shadow-xl max-w-4xl mx-auto">
-              <FaQuoteLeft className="text-amber-400 text-2xl mb-4" />
-              <p className="text-xl italic text-amber-100/90 mb-8">
+          <div className="mb-8 sm:mb-12 lg:mb-16">
+            <div className="bg-gradient-to-br from-amber-900/20 via-black/50 to-amber-900/10 border border-amber-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 backdrop-blur-sm shadow-lg sm:shadow-xl max-w-4xl mx-auto">
+              <FaQuoteLeft className="text-amber-400 text-xl sm:text-2xl mb-2 sm:mb-4" />
+              <p className="text-base sm:text-lg lg:text-xl italic text-amber-100/90 mb-4 sm:mb-6 lg:mb-8">
                 {activeTestimonial.content}
               </p>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col xs:flex-row items-start xs:items-center gap-4 sm:gap-6">
                 <img
                   src={activeTestimonial.image}
                   alt={activeTestimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-amber-500/50"
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-amber-500/50"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-amber-100">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-amber-100">
                     {activeTestimonial.name}
                   </h3>
-                  <p className="text-amber-300">{activeTestimonial.role}</p>
-                  <div className="flex mt-2">
+                  <p className="text-sm sm:text-base text-amber-300">
+                    {activeTestimonial.role}
+                  </p>
+                  <div className="flex mt-1 sm:mt-2">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className={`w-5 h-5 ${
+                        className={`w-4 h-4 sm:w-5 sm:h-5 ${
                           i < activeTestimonial.rating
                             ? "text-amber-400"
                             : "text-amber-800"
@@ -188,10 +190,10 @@ const Testimonials = () => {
 
         {/* Testimonial Marquee */}
         <Reveal keyframes={customFadeIn} duration={800} delay={200} triggerOnce>
-          <div className="mb-16 w-full">
-            <div className="mb-8 w-full overflow-hidden relative">
-              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-amber-900/70 to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-amber-900/70 to-transparent z-10 pointer-events-none" />
+          <div className="mb-8 sm:mb-12 lg:mb-16 w-full">
+            <div className="mb-4 sm:mb-8 w-full overflow-hidden relative">
+              <div className="absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-amber-900/70 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-amber-900/70 to-transparent z-10 pointer-events-none" />
 
               <Marquee
                 speed={40}
@@ -203,19 +205,19 @@ const Testimonials = () => {
                   <div
                     key={testimonial.id}
                     onClick={() => setActiveTestimonial(testimonial)}
-                    className={`mx-3 cursor-pointer transition-all duration-300 ${
+                    className={`mx-2 sm:mx-3 cursor-pointer transition-all duration-300 ${
                       activeTestimonial.id === testimonial.id
                         ? "scale-105 opacity-100 shadow-lg"
                         : "opacity-80 hover:opacity-95"
                     }`}
                   >
-                    <div className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-xl p-6 backdrop-blur-sm w-64 h-48 flex flex-col justify-between hover:border-amber-600/30 transition-colors">
-                      <FaQuoteLeft className="text-amber-400 text-xl" />
-                      <p className="text-sm text-amber-100/80 line-clamp-4">
+                    <div className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-lg sm:rounded-xl p-4 sm:p-6 backdrop-blur-sm w-48 sm:w-64 h-40 sm:h-48 flex flex-col justify-between hover:border-amber-600/30 transition-colors">
+                      <FaQuoteLeft className="text-amber-400 text-lg sm:text-xl" />
+                      <p className="text-xs sm:text-sm text-amber-100/80 line-clamp-4">
                         {testimonial.content}
                       </p>
                       <div>
-                        <h4 className="text-amber-100 font-medium">
+                        <h4 className="text-sm sm:text-base text-amber-100 font-medium">
                           {testimonial.name}
                         </h4>
                         <p className="text-xs text-amber-300 mt-1">
@@ -230,11 +232,11 @@ const Testimonials = () => {
           </div>
         </Reveal>
 
-        {/* Stats */}
+        {/* Stats - Responsive Adjustments */}
         <Reveal keyframes={customFadeIn} duration={900} delay={700} triggerOnce>
           <div
             ref={statsRef}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto"
           >
             {[
               { end: 50, suffix: "+", label: "Projects Completed" },
@@ -244,16 +246,18 @@ const Testimonials = () => {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-xl p-6 text-center backdrop-blur-sm"
+                className="bg-gradient-to-br from-amber-900/10 via-black/30 to-amber-900/5 border border-amber-800/20 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 text-center backdrop-blur-sm"
               >
-                <div className="text-3xl font-bold text-amber-300 mb-2">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-amber-300 mb-1 sm:mb-2">
                   {inView ? (
                     <CountUp end={stat.end} duration={2} suffix={stat.suffix} />
                   ) : (
                     `0${stat.suffix}`
                   )}
                 </div>
-                <div className="text-amber-100/80 text-sm">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-amber-100/80">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>

@@ -22,6 +22,7 @@ import {
   SiStyledcomponents,
   SiExpress,
   SiSupabase,
+  SiThreedotjs,
 } from "react-icons/si";
 
 // Custom animations
@@ -162,10 +163,15 @@ const About = () => {
       icon: <FaReact className="text-[#61DAFB]" />,
       progress: 90,
     },
+    {
+      name: "Three.js",
+      icon: <SiThreedotjs className="text-[#b62f99]" />,
+      progress: 80,
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-customBlack text-amber-50 overflow-hidden">
+    <div className="min-h-screen bg-customBlack overflow-x-hidden text-amber-50 overflow-hidden">
       {/* Floating Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -200,12 +206,12 @@ const About = () => {
 
       {/* Hero Section */}
       <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
-        <section className="relative pt-28 pb-16 text-center">
-          <div className="container mt-20 mx-auto px-6 relative z-10">
-            <h1 className="text-5xl md:text-6xl font-bold font-playfair text-amber-100 mb-4">
+        <section className="relative pt-20 md:pt-28 pb-12 md:pb-16 text-center">
+          <div className="container mt-16 md:mt-20 mx-auto px-4 sm:px-6 relative z-10">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-amber-100 mb-3 md:mb-4">
               About <span className="text-amber-300">Me</span>
             </h1>
-            <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-amber-100/80 max-w-3xl mx-auto px-4">
               Frontend Developer specializing in modern frameworks to deliver
               exquisite digital experiences. I build{" "}
               <span className="text-amber-300">fast</span>,{" "}
@@ -219,15 +225,15 @@ const About = () => {
       </Reveal>
 
       {/* Tech Stack Grid */}
-      <section className="container mx-auto px-6 py-12 relative z-10">
+      <section className="container mx-auto px-4 sm:px-6 py-8 md:py-12 relative z-10">
         <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
-          <h2 className="text-3xl font-lilita text-amber-100 mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-lilita text-amber-100 mb-6 md:mb-8 text-center">
             My <span className="text-amber-300">Tech Stack</span>
           </h2>
         </Reveal>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {/* Grid  */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
           {techStack.map((tech, index) => (
             <Reveal
               key={index}
@@ -239,25 +245,34 @@ const About = () => {
               <motion.div
                 whileHover={{ y: -5, scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-xl p-6 backdrop-blur-sm shadow-lg flex flex-col items-center"
+                className="h-full flex flex-col" // Ensure full height and flex column
               >
-                <div className="text-4xl mb-3">{tech.icon}</div>
-                <h3 className="text-amber-100 font-medium text-center mb-2">
-                  {tech.name}
-                </h3>
-
-                {/* Progress Bar */}
-                <div className="w-full bg-amber-900/20 rounded-full h-2 mb-2">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${tech.progress}%` }}
-                    transition={{ duration: 1.5, delay: index * 0.05 }}
-                    className="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"
-                  />
+                <div className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm shadow-lg flex flex-col flex-grow">
+                  {" "}
+                  {/* flex-grow for equal height */}
+                  <div className="text-3xl sm:text-4xl mb-2 sm:mb-3 flex justify-center">
+                    {tech.icon}
+                  </div>
+                  <h3 className="text-amber-100 font-medium text-center mb-2 sm:mb-3 text-sm sm:text-base">
+                    {tech.name}
+                  </h3>
+                  {/* Progress Bar - Moved to bottom */}
+                  <div className="mt-auto w-full">
+                    {" "}
+                    {/* mt-auto pushes to bottom */}
+                    <div className="w-full bg-amber-900/20 rounded-full h-1.5 sm:h-2 mb-1 sm:mb-2">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${tech.progress}%` }}
+                        transition={{ duration: 1.5, delay: index * 0.05 }}
+                        className="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"
+                      />
+                    </div>
+                    <span className="text-amber-300 text-xs sm:text-sm font-mono block text-center">
+                      {tech.progress}%
+                    </span>
+                  </div>
                 </div>
-                <span className="text-amber-300 text-sm font-mono">
-                  {tech.progress}%
-                </span>
               </motion.div>
             </Reveal>
           ))}
@@ -265,10 +280,10 @@ const About = () => {
       </section>
 
       {/* About Me Section */}
-      <section className="container mx-auto px-6 py-12 relative z-10">
+      <section className="container mx-auto px-4 sm:px-6 py-8 md:py-12 relative z-10">
         <Reveal keyframes={customFadeIn} duration={800} delay={200} triggerOnce>
-          <div className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-2xl p-8 backdrop-blur-sm shadow-xl">
-            <h2 className="text-3xl font-lilita text-amber-100 mb-6">
+          <div className="bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm shadow-xl">
+            <h2 className="text-2xl sm:text-3xl font-lilita text-amber-100 mb-4 sm:mb-6">
               Who <span className="text-amber-300">I Am</span>
             </h2>
             <Reveal
@@ -278,7 +293,7 @@ const About = () => {
               damping={0.1}
               triggerOnce
             >
-              <div className="space-y-4 text-amber-100/90">
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-amber-100/90">
                 <p>
                   I'm <span className="text-amber-300">Angela S. Nwattah</span>,
                   a passionate Frontend Developer with expertise in building

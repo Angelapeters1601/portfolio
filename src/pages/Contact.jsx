@@ -70,22 +70,22 @@ const Contact = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="min-h-screen bg-customBlack text-amber-50"
+      className="min-h-screen overflow-x-hidden bg-customBlack text-amber-50"
     >
       {/* Hero Section */}
-      <section className="relative pt-24 mt-20 pb-16">
+      <section className="relative pt-20 sm:pt-24 mt-16 sm:mt-20 pb-12 sm:pb-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(120,53,15,0.2)_0%,_rgba(0,0,0,0.8)_100%)] opacity-50"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.h1
             variants={slideInFromLeft}
-            className="text-4xl md:text-5xl font-bold font-playfair tracking-widest text-amber-100 mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair tracking-widest text-amber-100 mb-4"
           >
             Let's Build Something Amazing!
           </motion.h1>
           <motion.p
             variants={slideInFromLeft}
             transition={{ delay: 0.2 }}
-            className="text-xl font-sans text-amber-100/80 max-w-2xl"
+            className="text-base sm:text-lg font-sans text-amber-100/80 max-w-2xl"
           >
             I'm currently available for freelance work or full-time positions.
             Reach out and let's discuss how I can help bring your vision to
@@ -95,25 +95,29 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="container mx-auto px-6 py-12">
+      <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12"
         >
           {/* Contact Form */}
           <motion.div
             variants={slideInFromLeft}
-            className="bg-amber-900/10 border border-amber-800/30 rounded-xl p-8 backdrop-blur-sm"
+            className="bg-amber-900/10 border border-amber-800/30 rounded-xl p-6 sm:p-8 backdrop-blur-sm"
           >
             <motion.h2
               variants={itemVariants}
-              className="text-2xl font-lilita text-amber-100 mb-6 flex items-center"
+              className="text-xl sm:text-2xl font-lilita text-amber-100 mb-6 flex items-center"
             >
               <FaPaperPlane className="mr-3 text-amber-200" />
               Send Me a Message
             </motion.h2>
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="space-y-5 sm:space-y-6"
+            >
               <motion.div variants={itemVariants}>
                 <label htmlFor="name" className="block text-amber-100/80 mb-2">
                   Your Name
@@ -123,7 +127,7 @@ const Contact = () => {
                   name="user_name"
                   id="name"
                   required
-                  className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
+                  className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
                   placeholder="John Doe"
                 />
               </motion.div>
@@ -137,7 +141,7 @@ const Contact = () => {
                   name="user_email"
                   id="email"
                   required
-                  className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
+                  className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
                   placeholder="john@example.com"
                 />
               </motion.div>
@@ -154,7 +158,7 @@ const Contact = () => {
                   id="message"
                   rows="5"
                   required
-                  className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
+                  className="w-full bg-amber-900/20 border border-amber-800/40 rounded-lg px-4 py-3 text-amber-50 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-transparent"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </motion.div>
@@ -164,7 +168,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-amber-700 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center"
+                className="w-full bg-amber-700 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center text-sm sm:text-base"
               >
                 <FaPaperPlane className="mr-2" />
                 Send Message
@@ -174,80 +178,78 @@ const Contact = () => {
 
           {/* Contact Info */}
           <motion.div variants={slideInFromRight} className="space-y-8">
+            {/* Info */}
             <motion.div
               variants={containerVariants}
-              className="bg-amber-900/10 border border-amber-800/30 rounded-xl p-8"
+              className="bg-amber-900/10 border border-amber-800/30 rounded-xl p-6 sm:p-8"
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-2xl font-lilita text-amber-100 mb-6"
+                className="text-xl sm:text-2xl font-lilita text-amber-100 mb-6"
               >
                 Contact Information
               </motion.h2>
 
               <ul className="space-y-6">
-                <motion.li
-                  variants={itemVariants}
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="bg-amber-800/30 p-3 rounded-full mr-4">
-                    <FaEnvelope className="text-amber-200 text-xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-amber-100/80 font-medium">Email</h3>
-                    <a
-                      href="mailto:angelnwattah@gmail.com"
-                      className="text-amber-100 hover:text-amber-50 transition-colors"
-                    >
-                      angelnwattah@gmail.com
-                    </a>
-                  </div>
-                </motion.li>
-
-                <motion.li
-                  variants={itemVariants}
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="bg-amber-800/30 p-3 rounded-full mr-4">
-                    <FaPhone className="text-amber-200 text-xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-amber-100/80 font-medium">Phone</h3>
-                    <a
-                      href="tel:+2348104352294"
-                      className="text-amber-100 hover:text-amber-50 transition-colors"
-                    >
-                      +234 810 435 2294
-                    </a>
-                  </div>
-                </motion.li>
-
-                <motion.li
-                  variants={itemVariants}
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="bg-amber-800/30 p-3 rounded-full mr-4">
-                    <FaMapMarkerAlt className="text-amber-200 text-xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-amber-100/80 font-medium">Location</h3>
-                    <p className="text-amber-100">Lagos, Nigeria</p>
-                  </div>
-                </motion.li>
+                {[
+                  {
+                    icon: <FaEnvelope className="text-xl" />,
+                    title: "Email",
+                    value: "angelnwattah@gmail.com",
+                    href: "mailto:angelnwattah@gmail.com",
+                  },
+                  {
+                    icon: <FaPhone className="text-xl" />,
+                    title: "Phone",
+                    value: "+234 810 435 2294",
+                    href: "tel:+2348104352294",
+                  },
+                  {
+                    icon: <FaMapMarkerAlt className="text-xl" />,
+                    title: "Location",
+                    value: "Lagos, Nigeria",
+                    href: null,
+                  },
+                ].map(({ icon, title, value, href }, i) => (
+                  <motion.li
+                    key={i}
+                    variants={itemVariants}
+                    className="flex items-start"
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className="bg-amber-800/30 p-3 rounded-full mr-4 text-amber-200">
+                      {icon}
+                    </div>
+                    <div>
+                      <h3 className="text-amber-100/80 font-medium text-sm sm:text-base">
+                        {title}
+                      </h3>
+                      {href ? (
+                        <a
+                          href={href}
+                          className="text-amber-100 hover:text-amber-50 transition-colors text-sm sm:text-base"
+                        >
+                          {value}
+                        </a>
+                      ) : (
+                        <p className="text-amber-100 text-sm sm:text-base">
+                          {value}
+                        </p>
+                      )}
+                    </div>
+                  </motion.li>
+                ))}
               </ul>
             </motion.div>
 
             {/* Social Links */}
             <motion.div
               variants={containerVariants}
-              className="bg-amber-900/10 border border-amber-800/30 rounded-xl p-8"
+              className="bg-amber-900/10 border border-amber-800/30 rounded-xl p-6 sm:p-8"
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-2xl font-lilita text-amber-100 mb-6"
+                className="text-xl sm:text-2xl font-lilita text-amber-100 mb-6"
               >
                 Connect With Me
               </motion.h2>
@@ -256,41 +258,36 @@ const Contact = () => {
                 variants={itemVariants}
                 className="flex flex-wrap gap-4"
               >
-                <motion.a
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="https://linkedin.com/in/nwattah-angela"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-amber-800/40 hover:bg-amber-700/60 text-amber-100 px-5 py-3 rounded-lg transition-all"
-                >
-                  <FaLinkedin className="mr-2" />
-                  LinkedIn
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="https://github.com/angelapeters1601"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-amber-800/40 hover:bg-amber-700/60 text-amber-100 px-5 py-3 rounded-lg transition-all"
-                >
-                  <FaGithub className="mr-2" />
-                  GitHub
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="https://twitter.com/mavoolumma"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-amber-800/40 hover:bg-amber-700/60 text-amber-100 px-5 py-3 rounded-lg transition-all"
-                >
-                  <FaTwitter className="mr-2" />
-                  Twitter
-                </motion.a>
+                {[
+                  {
+                    href: "https://linkedin.com/in/nwattah-angela",
+                    label: "LinkedIn",
+                    icon: <FaLinkedin className="mr-2" />,
+                  },
+                  {
+                    href: "https://github.com/angelapeters1601",
+                    label: "GitHub",
+                    icon: <FaGithub className="mr-2" />,
+                  },
+                  {
+                    href: "https://twitter.com/mavoolumma",
+                    label: "Twitter",
+                    icon: <FaTwitter className="mr-2" />,
+                  },
+                ].map(({ href, label, icon }, i) => (
+                  <motion.a
+                    key={i}
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-amber-800/40 hover:bg-amber-700/60 text-amber-100 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base transition-all"
+                  >
+                    {icon}
+                    {label}
+                  </motion.a>
+                ))}
               </motion.div>
             </motion.div>
           </motion.div>

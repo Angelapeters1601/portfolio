@@ -56,10 +56,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-customBlack border-t border-amber-700/20">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="bg-customBlack overflow-x-hidden border-t border-amber-700/20">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-16">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -72,14 +72,14 @@ const Footer = () => {
           >
             <motion.h2
               variants={leftItemVariants}
-              className="text-4xl font-bold font-sevillana tracking-wide text-amber-100"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold font-sevillana tracking-wide text-amber-100"
             >
               Angela Nwattah
             </motion.h2>
 
             <motion.p
               variants={leftItemVariants}
-              className="text-amber-50 font-sans text-lg"
+              className="text-amber-50 font-sans text-base sm:text-lg"
             >
               Developing intuitive digital experiences that balance aesthetic
               appeal with seamless functionality and accessibility.
@@ -137,12 +137,12 @@ const Footer = () => {
           <motion.div className="space-y-6" variants={containerVariants}>
             <motion.h3
               variants={rightItemVariants}
-              className="text-2xl font-lilita text-amber-100 uppercase tracking-wider"
+              className="text-xl sm:text-2xl font-lilita text-amber-100 uppercase tracking-wider"
             >
               <FaCode className="inline mr-2" />
               Explore
             </motion.h3>
-            <ul className="space-y-4 font-sans text-lg">
+            <ul className="space-y-3 font-sans text-base sm:text-lg">
               {[
                 {
                   icon: <FaHome className="mr-2 text-amber-200" />,
@@ -181,12 +181,12 @@ const Footer = () => {
           <motion.div className="space-y-6" variants={containerVariants}>
             <motion.h3
               variants={itemVariants}
-              className="text-2xl font-lilita text-amber-100 uppercase tracking-wider"
+              className="text-xl sm:text-2xl font-lilita text-amber-100 uppercase tracking-wider"
             >
               <FaMapMarkerAlt className="inline mr-2" />
               Contact
             </motion.h3>
-            <ul className="space-y-4 font-sans text-lg">
+            <ul className="space-y-3 font-sans text-base sm:text-lg">
               {[
                 {
                   icon: (
@@ -247,7 +247,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center"
+          className="flex flex-col sm:flex-col md:flex-row justify-between items-center gap-4 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -256,7 +256,7 @@ const Footer = () => {
           <p className="font-mono text-amber-200 text-sm">
             © {currentYear} Nwattah Angela. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex space-x-6">
             {[
               { text: "Privacy Policy", url: "#privacy" },
               { text: "Terms of Service", url: "#terms" },

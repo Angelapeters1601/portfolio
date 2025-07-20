@@ -64,10 +64,17 @@ const Projects = () => {
         "A paralegal service platform designed to assist individuals in connecting with qualified legal professionals across various domains, including business law, family law, criminal law, intellectual property, estate planning, and personal injury.",
       tags: [
         "React",
+        "JavaScript",
+        "NodeJs",
+        "Nodemailer",
         "Tailwind CSS",
         "Supabase",
         "Twillio",
         "Livechat",
+        "Resend",
+        "Posthog",
+        "Geolocation",
+        "Chart.js",
         "Google Cloud Services",
         "React-Router-Dom",
         "Lazy-loading & Suspense",
@@ -81,8 +88,36 @@ const Projects = () => {
         live: "https://corley.legal",
         code: "https://github.com/angelapeters1601/corley-legal",
       },
-      accentColor: "bg-[#764ABC]/20",
+      accentColor: "bg-[#86dA0C]/20",
       icon: <SiRedux className="text-[#764ABC]" />,
+    },
+    {
+      id: "jiffyfox",
+      title: "JiffyFox",
+      description:
+        "A multi-service platform offering on-demand solutions including handyman and contracting services, smart home installations, residential & commercial cleaning, courier & moving logistics, and project/staff/event management, all through a sleek, modern interface.",
+      tags: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Supabase",
+        "Framer Motion",
+        "Heroicons",
+        "React-Router-Dom",
+        "Lazy-loading & Suspense",
+        "Shadcn UI",
+        "Cloudinary",
+        "Google Maps API",
+        "Posthog",
+        "PWA Ready",
+      ],
+      image: "https://jiffyfox.com",
+      links: {
+        live: "https:jiffyfox.com",
+        code: "https://github.com/angelapeters1601/jiffyfox",
+      },
+      accentColor: "bg-[#6017B4]/20",
+      icon: <SiReact className="text-[#6017B4]" />,
     },
     {
       id: "rate-it",
@@ -91,6 +126,7 @@ const Projects = () => {
         "A beauty product review web application inspired by Good Housekeeping. It helps users make informed decisions by providing access to expert reviews and ratings.",
       tags: [
         "React.js",
+        "JavaScript",
         "Redux toolkit",
         "Tailwindcss",
         "Email.Js",
@@ -118,6 +154,7 @@ const Projects = () => {
         "Blazing-fast pizza ordering experience with real-time cart updates. Reduced checkout time by 40% through UX optimizations.",
       tags: [
         "React",
+        "JavaScript",
         "Redux toolkit",
         "Tailwindcss",
         "Vite",
@@ -129,7 +166,7 @@ const Projects = () => {
         live: "https://angelapeters1601.github.io/fast-react-pizza",
         code: "https://github.com/angelapeters1601/fast-react-pizza",
       },
-      accentColor: "bg-[#E34F26]/20",
+      accentColor: "bg-[#FACC15]/20",
       icon: <FaReact className="text-[#61DAFB]" />,
     },
     {
@@ -137,13 +174,13 @@ const Projects = () => {
       title: "Brain Buster",
       description:
         "Interactive quiz app with 500+ questions. Reviewed and rated by top udemy instructor and teaching assistant.",
-      tags: ["React", "useReducer", "Framer motion", "Vite"],
+      tags: ["React", "useReducer", "JavaScript", "Framer motion", "Vite"],
       image: "https://brain-buster-six.vercel.app",
       links: {
         live: "https://brain-buster-six.vercel.app",
         code: "https://github.com/angelapeters1601/brain-buster",
       },
-      accentColor: "bg-[#FFCA28]/20",
+      accentColor: "bg-[#F472B6]/20",
       icon: <SiFirebase className="text-[#FFCA28]" />,
     },
     {
@@ -153,6 +190,7 @@ const Projects = () => {
         "A personal portfolio site built to showcase my projects, skills, and developer journey. Designed with a focus on responsiveness, accessibility, and smooth user experience.",
       tags: [
         "React.js",
+        "JavaScript",
         "Tailwindcss",
         "Hooks",
         "Framer motion",
@@ -160,12 +198,13 @@ const Projects = () => {
         "React-typewriter",
         "React loading skeleton",
         "Email.js",
+        "Three.js",
       ],
       links: {
         live: "https://onefarmtech.com/",
         code: "https://github.com/angelapeters1601/portfolio",
       },
-      accentColor: "bg-[#47A248]/20",
+      accentColor: "bg-[#EF4444]/20",
       icon: <SiMongodb className="text-[#47A248]" />,
     },
     {
@@ -175,6 +214,7 @@ const Projects = () => {
         "Chef's Pal is a dynamic recipe discovery and meal-planning web application inspired by simple and intuitive cooking experiences. It allows users to explore recipes based on categories such as mealtime, meal type, and dietary preferences (vegan or non-vegan). Users can search for specific meals, save their favorite recipes for quick access, and generate a shopping list automatically populated with essential ingredients.",
       tags: [
         "React.js",
+        "JavaScript",
         "CSS modules",
         "Bootstrap",
         "React Hooks",
@@ -188,13 +228,13 @@ const Projects = () => {
         live: "https://onefarmtech.com/",
         code: "https://github.com/angelapeters1601/chef-sPal",
       },
-      accentColor: "bg-[#47A248]/20",
+      accentColor: "bg-[#FFD700]/20",
       icon: <SiMongodb className="text-[#47A248]" />,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-900 via-black to-amber-900 border border-amber-800 rounded-2xl p-8 backdrop-blur-sm shadow-xl">
+    <div className="min-h-screen overflow-x-hidden sm: mt-20 bg-gradient-to-br from-amber-900 via-black to-amber-900 border border-amber-800 rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm shadow-xl">
       {/* Floating Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(12)].map((_, i) => (
@@ -227,23 +267,23 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 py-24 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-24 relative z-10">
         <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
-          <div className="text-center mb-20">
-            <h1 className="text-5xl md:text-6xl mt-15 font-bold font-playfair text-amber-900 dark:text-amber-100 mb-4">
+          <div className="text-center mb-12 md:mb-20">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-amber-900 dark:text-amber-100 mb-3 md:mb-4">
               Project{" "}
               <span className="text-amber-600 dark:text-amber-300">
                 Gallery
               </span>
             </h1>
-            <p className="text-xl text-amber-800/80 dark:text-amber-100/70 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-amber-800/80 dark:text-amber-100/70 max-w-3xl mx-auto px-4">
               Each creation represents problems solved, technologies mastered,
               and design decisions made
             </p>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <Reveal
               key={index}
@@ -280,14 +320,14 @@ const Projects = () => {
                     </span>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-5 sm:p-6">
                     <div className="flex justify-between items-start mb-3">
                       <Reveal
                         keyframes={customFadeInUp}
                         duration={600}
                         triggerOnce
                       >
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-amber-100">
+                        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-amber-100">
                           {project.title}
                         </h2>
                       </Reveal>
@@ -325,7 +365,7 @@ const Projects = () => {
                       delay={200}
                       triggerOnce
                     >
-                      <p className="text-gray-700 dark:text-amber-100/80 mb-4">
+                      <p className="text-sm sm:text-base text-gray-700 dark:text-amber-100/80 mb-4">
                         {project.description}
                       </p>
                     </Reveal>
@@ -340,7 +380,7 @@ const Projects = () => {
                         {project.tags.map((tag, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-amber-100/50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 text-xs font-medium rounded-full"
+                            className="px-2 py-1 text-xs sm:text-xs bg-amber-100/50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 font-medium rounded-full"
                           >
                             {tag}
                           </span>

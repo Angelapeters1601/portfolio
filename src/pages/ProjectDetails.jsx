@@ -21,14 +21,16 @@ import {
   SiRedux,
   SiNextdotjs,
   SiFirebase,
-  SiStyledcomponents,
+  SiReact,
 } from "react-icons/si";
-import { GiBrain, GiChefToque } from "react-icons/gi";
 import { MdDescription, MdOutlineFeaturedPlayList } from "react-icons/md";
 import RateItImg from "../assets/rate-it.png";
 import PizzaImg from "../assets/pizza.jpeg";
+import ChefsPalImg from "../assets/chefspalImg.gif";
 import BrainBusterImg from "../assets/brain-buster.png";
+import MeImg from "../assets/me.jpg";
 import CorleyImg from "../assets/corley-legal.png";
+import JiffyfoxImg from "../assets/jiffyfox.jpg";
 
 // Custom animations
 const customFadeIn = keyframes`
@@ -87,6 +89,7 @@ const ProjectDetails = () => {
         "FastReactPizza is a dynamic pizza ordering web application inspired by Jonas Schmedtmann's ReactJS course on Udemy. The app allows users to browse a curated pizza menu, place orders, and customize delivery details. Users can enter their names which are managed globally using Redux Toolkit and submit delivery information through an intuitive form. A high-priority delivery option is available at an extra cost, allowing faster order processing. The platform also features a pizza search functionality by order number or ID, and displays detailed order summaries including user information, address, location, and estimated delivery time.",
       tags: [
         "React",
+        "JavaScript",
         "Redux Toolkit",
         "Tailwindcss",
         "Vite",
@@ -124,6 +127,7 @@ const ProjectDetails = () => {
         "A beauty product review web application inspired by Good Housekeeping, designed to help users make informed decisions about beauty products. The platform features expert and editor-curated reviews and ratings, along with user-generated feedback. Users can rate and review products, view real-time prices, and shop directly via Amazon integration. Additional features include the ability to save favorite products for later, a searchable product catalog, and a personalized saved-items section for easy access.",
       tags: [
         "React.js",
+        "JavaScript",
         "Redux toolkit",
         "Tailwindcss",
         "Email.Js",
@@ -164,7 +168,7 @@ const ProjectDetails = () => {
       title: "Brain Buster",
       description:
         "BrainBuster is an interactive quiz web application built with ReactJS, designed to challenge users across a variety of topics and difficulty levels. Users can select their preferred subject, the number of questions, and the desired difficulty before starting the quiz. The app provides real-time feedback with visual cues  a green buzz for correct answers and a red buzz for incorrect ones. Progress is tracked throughout, and users receive a final score with a performance remark at the end. There's also an option to restart the quiz for a fresh attempt. State is managed using React's built-in hooks, ensuring a smooth and responsive experience. This project was rated and positively reviewed by a top Udemy React instructor and a course teaching assistant, recognizing its clean UI and strong implementation of core React principles.",
-      tags: ["React", "useReducer", "Framer motion", "Vite"],
+      tags: ["React", "JavaScript", "useReducer", "Framer motion", "Vite"],
       image: BrainBusterImg,
       links: {
         live: "https://brain-buster-six.vercel.app",
@@ -195,14 +199,21 @@ const ProjectDetails = () => {
         "Corley Legal is a paralegal service platform designed to assist individuals in connecting with qualified legal professionals across various domains, including business law, family law, criminal law, intellectual property, estate planning, and personal injury.The platform includes a custom-built admin dashboard that tracks visitor activity and captures contact submissions via a dynamic contact form. Admins can also upload video content, manage legal briefings, and handle document uploads, all of which reflect in real time on the front end. A unique feature is the prisoner messaging panel, enabling internal communication for specific use cases. The frontend is well-routed and enhanced with smooth animations and transitions. A chatbot assistant is integrated to guide users and escalate to a live agent on request. While the project is still in development, it already demonstrates full-stack capabilities and a deep understanding of legal services workflows.",
       tags: [
         "React",
+        "JavaScript",
+        "NodeJs",
+        "Nodemailer",
         "Tailwind CSS",
         "Supabase",
         "Twillio",
         "Livechat",
+        "Resend",
+        "Posthog",
         "Google Cloud Services",
         "React-Router-Dom",
         "Lazy-loading & Suspense",
         "Swiper.js",
+        "Chart.js",
+        "Geolocation",
         "React-Awesome-Reveal",
         "Framer motion",
         "Plesk",
@@ -237,6 +248,7 @@ const ProjectDetails = () => {
         "Chef's Pal is a dynamic recipe discovery and meal-planning web application inspired by simple and intuitive cooking experiences. It allows users to explore recipes based on categories such as mealtime, meal type, and dietary preferences (vegan or non-vegan). Users can search for specific meals, save their favorite recipes for quick access, and generate a shopping list automatically populated with essential ingredients. The app also includes a personal to-do list feature for meal preparation planning and integrates smooth, polished animations for an enjoyable user experience. Chef's Pal is built using ReactJS with Context API for state management, and incorporates lazy loading, Framer Motion animations, and API data fetching using both Axios and native fetch.",
       tags: [
         "React.js",
+        "JavaScript",
         "CSS modules",
         "Bootstrap",
         "React Hooks",
@@ -246,6 +258,7 @@ const ProjectDetails = () => {
         "Memoisation",
         "Email.js",
       ],
+      image: ChefsPalImg,
       links: {
         live: "https://onefarmtech.com/",
         code: "https://github.com/angelapeters1601/chef-sPal",
@@ -274,6 +287,7 @@ const ProjectDetails = () => {
         "A personal portfolio site built to showcase my projects, skills, and developer journey. Designed with a focus on responsiveness, accessibility, and smooth user experience.",
       tags: [
         "React.js",
+        "JavaScript",
         "Tailwindcss",
         "Hooks",
         "Framer motion",
@@ -281,7 +295,9 @@ const ProjectDetails = () => {
         "React-typewriter",
         "React loading skeleton",
         "Email.js",
+        "Three.js",
       ],
+      image: MeImg,
       links: {
         live: "https://brain-buster-six.vercel.app",
         code: "https://github.com/angelapeters1601/portfolio",
@@ -301,6 +317,46 @@ const ProjectDetails = () => {
         "Contact form integration for direct messaging.",
       ],
     },
+    {
+      id: "jiffyfox",
+      title: "JiffyFox",
+      description:
+        "JiffyFox is a fast-paced productivity web application that helps users manage tasks, schedules, and short-term goals in a visually engaging and intuitive way. Designed for creatives, entrepreneurs, and students, it features a drag-and-drop task board, quick timers for time-boxing tasks, and a minimal distraction-free layout. The app leverages real-time updates to sync tasks across devices. A user dashboard includes personalized insights, reminders, and productivity heatmaps. JiffyFox stands out with its sleek interface, themed modes (like Night Owl & Focus Zen), and subtle animations that make managing tasks feel delightful rather than daunting.",
+      tags: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Supabase",
+        "React Beautiful DnD",
+        "Chart.js",
+        "React-Router-Dom",
+        "Vite",
+        "Netlify",
+      ],
+      image: JiffyfoxImg,
+      links: {
+        live: "https://jiffyfox.com",
+        code: "https://github.com/angelapeters1601/jiffyfox",
+      },
+      accentColor: "bg-[#10B981]/20",
+      icon: <SiReact className="text-[#10B981]" />,
+      challenges:
+        "Designing an intuitive task management interface that works smoothly across desktop and mobile. Ensuring real-time task syncing with Supabase and managing drag-and-drop edge cases. Building dynamic charts that update with user behavior. Managing complex component state and transitions while keeping UI performant and responsive.",
+      learnings:
+        "Learned how to combine Supabase real-time features with local state management for task syncing. Gained experience using React Beautiful DnD for intuitive task handling. Enhanced knowledge of creating responsive dashboard layouts with Tailwind CSS. Improved animation sequencing using Framer Motion. Understood how to use Chart.js to turn user behavior into insights.",
+      features: [
+        "Drag-and-drop task board with customizable task categories",
+        "Real-time syncing across devices using Supabase",
+        "Productivity heatmap showing active vs. idle days",
+        "Timer feature for focused task execution (Pomodoro-style)",
+        "Dark mode with productivity-themed design toggles",
+        "Animated transitions using Framer Motion",
+        "Mobile-first responsive layout with intuitive UX",
+        "User dashboard with reminders and productivity insights",
+        "Secure login and personalized user data management",
+      ],
+    },
   ];
 
   const project = projects.find((p) => p.id === id);
@@ -308,14 +364,18 @@ const ProjectDetails = () => {
   if (!project) return <div>Project not found</div>;
 
   return (
-    <div className="min-h-screen mt-20 bg-gradient-to-br from-amber-900 via-black to-amber-900 py-16 px-4 sm:px-6 lg:px-8">
+    <div
+      className="min-h-screen overflow-x-hidden mt-20 md:mt-20 bg-gradient-to-br
+     from-amber-900 via-black to-amber-900 py-8 px-4 sm:py-15 
+     sm:px-6 lg:px-8"
+    >
       <div className="max-w-6xl mx-auto">
         <Reveal keyframes={customScaleIn} duration={800} triggerOnce>
-          <div className="bg-white/10 backdrop-blur-sm border border-amber-800/30 rounded-2xl p-8 shadow-xl">
+          <div className="bg-white/10 backdrop-blur-sm border border-amber-800/30 rounded-2xl p-6 sm:p-8 shadow-xl">
             {/* Header */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
-                <h1 className="text-4xl md:text-5xl font-bold font-playfair text-amber-100 mb-2">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-amber-100 mb-2 sm:mb-3">
                   {project.title}
                 </h1>
               </Reveal>
@@ -325,48 +385,51 @@ const ProjectDetails = () => {
                 delay={200}
                 triggerOnce
               >
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-4">
                   {project.links.code && (
                     <a
                       href={project.links.code}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-amber-300 hover:text-amber-200"
+                      className="flex items-center text-sm sm:text-base text-amber-300 hover:text-amber-200 transition-colors"
                     >
-                      <FaGithub className="mr-2" /> Code
+                      <FaGithub className="mr-2 text-lg" /> Code
                     </a>
                   )}
                   <a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-amber-300 hover:text-amber-200"
+                    className="flex items-center text-sm sm:text-base text-amber-300 hover:text-amber-200 transition-colors"
                   >
-                    <FaExternalLinkAlt className="mr-2" /> Live Demo
+                    <FaExternalLinkAlt className="mr-2 text-lg" /> Live Demo
                   </a>
                 </div>
               </Reveal>
             </div>
 
             {/* Project content */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
                 <Reveal keyframes={customFadeInLeft} duration={800} triggerOnce>
-                  <img
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    className="h-80 w-full object-cover p-2 bg-amber-900/10 rounded-xl"
-                  />
+                  <div className="relative overflow-hidden rounded-xl bg-amber-900/10 p-2">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      className="h-auto w-full object-cover rounded-lg"
+                      style={{ minHeight: "280px" }}
+                    />
+                  </div>
                 </Reveal>
 
-                <div className="mb-6">
+                <div className="mt-6">
                   <Reveal
                     keyframes={customFadeInLeft}
                     duration={800}
                     delay={200}
                     triggerOnce
                   >
-                    <h2 className="text-2xl mt-2 font-bold text-amber-100 mb-3 flex items-center">
+                    <h2 className="text-xl sm:text-2xl font-bold text-amber-100 mb-3 sm:mb-4 flex items-center">
                       <FaTools className="mr-2 text-amber-300" /> Tech Stack
                     </h2>
                   </Reveal>
@@ -375,38 +438,41 @@ const ProjectDetails = () => {
                     duration={800}
                     delay={300}
                     triggerOnce
-                    className="flex flex-wrap gap-2"
                   >
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 mt-2 bg-amber-900/30 text-amber-200 rounded-full flex items-center"
-                      >
-                        {tag === "React" && (
-                          <FaReact className="mr-1 text-[#61DAFB]" />
-                        )}
-                        {tag === "Redux Toolkit" && (
-                          <SiRedux className="mr-1 text-[#764ABC]" />
-                        )}
-                        {tag === "Tailwindcss" && (
-                          <SiTailwindcss className="mr-1 text-[#38BDF8]" />
-                        )}
-                        {tag === "Next.js" && <SiNextdotjs className="mr-1" />}
-                        {tag === "Firebase" && (
-                          <SiFirebase className="mr-1 text-[#FFCA28]" />
-                        )}
-                        {tag === "MongoDB" && (
-                          <SiMongodb className="mr-1 text-[#47A248]" />
-                        )}
-                        {tag === "Node.js" && (
-                          <FaNodeJs className="mr-1 text-[#68A063]" />
-                        )}
-                        {tag === "Figma" && (
-                          <FaFigma className="mr-1 text-[#F24E1E]" />
-                        )}
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="flex items-center rounded-full bg-amber-900/30 px-2 sm:px-3 py-1 text-xs sm:text-sm text-amber-200"
+                        >
+                          {tag === "React" && (
+                            <FaReact className="mr-1 text-[#61DAFB]" />
+                          )}
+                          {tag === "Redux Toolkit" && (
+                            <SiRedux className="mr-1 text-[#764ABC]" />
+                          )}
+                          {tag === "Tailwindcss" && (
+                            <SiTailwindcss className="mr-1 text-[#38BDF8]" />
+                          )}
+                          {tag === "Next.js" && (
+                            <SiNextdotjs className="mr-1" />
+                          )}
+                          {tag === "Firebase" && (
+                            <SiFirebase className="mr-1 text-[#FFCA28]" />
+                          )}
+                          {tag === "MongoDB" && (
+                            <SiMongodb className="mr-1 text-[#47A248]" />
+                          )}
+                          {tag === "Node.js" && (
+                            <FaNodeJs className="mr-1 text-[#68A063]" />
+                          )}
+                          {tag === "Figma" && (
+                            <FaFigma className="mr-1 text-[#F24E1E]" />
+                          )}
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </Reveal>
                 </div>
               </div>
@@ -418,8 +484,8 @@ const ProjectDetails = () => {
                     duration={800}
                     triggerOnce
                   >
-                    <h2 className="text-2xl font-bold text-amber-100 mb-3 flex items-center">
-                      <MdDescription className="mr-2 text-amber-300" />{" "}
+                    <h2 className="text-xl sm:text-2xl font-bold text-amber-100 mb-3 sm:mb-4 flex items-center">
+                      <MdDescription className="mr-2 text-amber-300" />
                       Description
                     </h2>
                   </Reveal>
@@ -429,7 +495,9 @@ const ProjectDetails = () => {
                     delay={200}
                     triggerOnce
                   >
-                    <p className="text-amber-100/80">{project.description}</p>
+                    <p className="text-sm sm:text-base text-amber-100/80">
+                      {project.description}
+                    </p>
                   </Reveal>
                 </div>
 
@@ -440,8 +508,8 @@ const ProjectDetails = () => {
                     delay={300}
                     triggerOnce
                   >
-                    <h2 className="text-2xl font-bold text-amber-100 mb-3 flex items-center">
-                      <MdOutlineFeaturedPlayList className="mr-2 text-amber-300" />{" "}
+                    <h2 className="text-xl sm:text-2xl font-bold text-amber-100 mb-3 sm:mb-4 flex items-center">
+                      <MdOutlineFeaturedPlayList className="mr-2 text-amber-300" />
                       Key Features
                     </h2>
                   </Reveal>
@@ -451,7 +519,7 @@ const ProjectDetails = () => {
                     delay={400}
                     triggerOnce
                   >
-                    <ul className="list-disc pl-5 text-amber-100/80 space-y-2">
+                    <ul className="space-y-2 sm:space-y-3 pl-5 text-sm sm:text-base text-amber-100/80">
                       {project.features.map((feature, i) => (
                         <li key={i} className="flex items-start">
                           <FaListUl className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
@@ -462,7 +530,7 @@ const ProjectDetails = () => {
                   </Reveal>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 sm:space-y-5">
                   <Reveal
                     keyframes={customFadeInRight}
                     duration={800}
@@ -470,11 +538,11 @@ const ProjectDetails = () => {
                     triggerOnce
                   >
                     <div>
-                      <h3 className="text-xl font-semibold text-amber-200 mb-2 flex items-center">
-                        <FaExclamationTriangle className="mr-2 text-amber-300" />{" "}
+                      <h3 className="text-lg sm:text-xl font-semibold text-amber-200 mb-2 sm:mb-3 flex items-center">
+                        <FaExclamationTriangle className="mr-2 text-amber-300" />
                         Challenges
                       </h3>
-                      <p className="text-amber-100/80 flex items-start">
+                      <p className="text-sm sm:text-base text-amber-100/80 flex items-start">
                         <FaCode className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
                         {project.challenges}
                       </p>
@@ -487,11 +555,11 @@ const ProjectDetails = () => {
                     triggerOnce
                   >
                     <div>
-                      <h3 className="text-xl font-semibold text-amber-200 mb-2 flex items-center">
-                        <FaLightbulb className="mr-2 text-amber-300" />{" "}
+                      <h3 className="text-lg sm:text-xl font-semibold text-amber-200 mb-2 sm:mb-3 flex items-center">
+                        <FaLightbulb className="mr-2 text-amber-300" />
                         Learnings
                       </h3>
-                      <p className="text-amber-100/80 flex items-start">
+                      <p className="text-sm sm:text-base text-amber-100/80 flex items-start">
                         <FaBookOpen className="mr-2 mt-1 flex-shrink-0 text-amber-300/80" />
                         {project.learnings}
                       </p>

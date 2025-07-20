@@ -1,6 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Stars, Float, Text } from "@react-three/drei";
+import {
+  OrbitControls,
+  Stars,
+  Float,
+  Text,
+  Points,
+  PointMaterial,
+} from "@react-three/drei";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
@@ -73,6 +80,38 @@ const NextLogo = () => {
   );
 };
 
+const ResilientCanvas = ({ children }) => {
+  useEffect(() => {
+    const handleContextLost = (event) => {
+      event.preventDefault();
+      console.log("WebGL context lost, will restore");
+    };
+
+    const canvas = document.querySelector("canvas");
+    canvas.addEventListener("webglcontextlost", handleContextLost, false);
+
+    return () => {
+      canvas.removeEventListener("webglcontextlost", handleContextLost);
+    };
+  }, []);
+
+  return (
+    <Canvas
+      gl={{
+        antialias: true,
+        powerPreference: "high-performance",
+      }}
+      onCreated={({ gl }) => {
+        gl.getContext().addEventListener("webglcontextrestored", () => {
+          window.location.reload();
+        });
+      }}
+    >
+      {children}
+    </Canvas>
+  );
+};
+
 // Smoother Floating Name Component
 const FloatingName = () => {
   const ref = useRef();
@@ -107,67 +146,43 @@ const FloatingName = () => {
   );
 };
 
-// Enhanced Floating Particles Component
-const Particles = () => {
+const SubtleParticles = () => {
   const particles = useRef();
-  const count = 800; // Increased particle count
+  const count = 1500;
+
+  const positions = useMemo(() => {
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count * 3; i++) {
+      arr[i] = (Math.random() - 0.5) * 10;
+    }
+    return arr;
+  }, []);
 
   useFrame((state) => {
     if (particles.current) {
-      particles.current.rotation.y += 0.0008;
-      particles.current.rotation.x =
-        Math.sin(state.clock.getElapsedTime() * 0.3) * 0.1;
+      particles.current.rotation.y += 0.0005;
     }
   });
 
   return (
-    <points ref={particles}>
-      <bufferGeometry attach="geometry">
-        <bufferAttribute
-          attach="attributes-position"
-          count={count}
-          array={
-            new Float32Array(
-              Array(count * 3)
-                .fill()
-                .map(() => (Math.random() - 0.5) * 12) // Slightly larger spread
-            )
-          }
-          itemSize={3}
-        />
-        <bufferAttribute
-          attach="attributes-size"
-          count={count}
-          array={
-            new Float32Array(
-              Array(count)
-                .fill()
-                .map(() => 0.02 + Math.random() * 0.03) // Varied sizes
-            )
-          }
-          itemSize={1}
-        />
-      </bufferGeometry>
-      <pointsMaterial
-        attach="material"
-        size={0.03}
-        sizeAttenuation
-        color="#f59e0b"
+    <Points ref={particles} positions={positions}>
+      <PointMaterial
         transparent
-        opacity={0.7}
-        alphaTest={0.01}
-        blending={2} // Additive blending for smoother particles
+        color="#f59e0b"
+        size={0.03}
+        sizeAttenuation={true}
+        opacity={0.4}
       />
-    </points>
+    </Points>
   );
 };
 
 const Home = () => {
   return (
-    <div className="bg-customBlack">
+    <div className="bg-customBlack over">
       {/* Enhanced 3D Background Canvas */}
       <div className="fixed inset-0 -z-10">
-        <Canvas>
+        <ResilientCanvas>
           <ambientLight intensity={0.6} />
           <pointLight position={[10, 10, 10]} intensity={1.2} />
           <pointLight
@@ -187,13 +202,12 @@ const Home = () => {
           <ReactLogo />
           <NextLogo />
           <FloatingName />
-          <Particles />
           <OrbitControls
             enableZoom={false}
             enablePan={false}
             enableRotate={false}
           />
-        </Canvas>
+        </ResilientCanvas>
       </div>
 
       {/* Page Content */}
@@ -263,7 +277,8 @@ const Home = () => {
 
               {/* 2D Animated Icons */}
               <motion.div
-                className="absolute -bottom-8 -left-8 text-3xl text-amber-300"
+                className="absolute -bottom-7 sm:-bottom-8 
+                -left-5 sm:-left-8 text-2xl sm:text-4xl text-amber-300"
                 animate={{
                   y: [0, -12, 0],
                   rotate: [0, 5, -5, 0],
@@ -277,7 +292,7 @@ const Home = () => {
                 <FaReact />
               </motion.div>
               <motion.div
-                className="absolute -top-8 -right-8 text-3xl text-amber-300"
+                className="absolute -top-6 sm:-top-8 -right-4 sm:-right-8 text-2xl sm:text-3xl text-amber-300"
                 animate={{
                   rotate: 360,
                   scale: [1, 1.1, 1],
@@ -445,6 +460,13 @@ const Home = () => {
           className="py-20 bg-gradient-to-b from-transparent to-amber-900/5"
           id="about"
         >
+          {/* 3.js */}
+          <div className="absolute inset-0 -z-10 opacity-20">
+            <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+              <SubtleParticles />
+            </Canvas>
+          </div>
+
           <Fade triggerOnce damping={0.2}>
             <div className="max-w-6xl mx-auto px-6 text-center">
               <motion.div
@@ -516,12 +538,12 @@ const Home = () => {
                   {[
                     "React",
                     "Next.js",
-                    "TypeScript",
-                    "Tailwind",
-                    "Framer Motion",
-                    "Three.js",
+                    "Redux Toolkit",
+                    "JavaScript",
                     "Node.js",
-                    "GraphQL",
+                    "Supabase",
+                    "Tailwindcss",
+                    "Three.js",
                   ].map((skill, index) => (
                     <motion.div
                       key={skill}

@@ -9,12 +9,10 @@
 
 @layer base {
   :root {
-    /* Font families */
     --font-playfair: "Playfair Display", serif;
     --font-lilita: "Lilita One", cursive;
     --font-sevillana: "Sevillana", cursive;
 
-    /* Light mode colors */
     --customBlack: #111111;
     --customGray: #333333;
     --customWhite: #ffffff;
@@ -24,7 +22,6 @@
   }
 
   .dark {
-    /* Dark mode colors */
     --customBlack: #e5e7eb;
     --customWhite: #1f2937;
     --customOffWhite: #374151;
@@ -32,7 +29,19 @@
 }
 
 @layer utilities {
-  /* Radial gradient utilities */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .contain-strict {
+    contain: strict;
+  }
+
   .bg-radial-light {
     background-image: radial-gradient(
       circle at center,
@@ -51,7 +60,6 @@
     );
   }
 
-  /* Color utilities */
   .bg-customBlack {
     background-color: var(--customBlack);
   }

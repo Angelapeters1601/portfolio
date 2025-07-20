@@ -45,7 +45,7 @@ const Header = () => {
 
   const circleVariants = {
     hidden: {
-      clipPath: "circle(0% at 95% 5%)",
+      clipPath: "circle(30% at 90% 10%)",
       transition: {
         type: "easeOut",
         duration: 0.4,
@@ -157,7 +157,7 @@ const Header = () => {
               aria-label="Menu"
               whileTap={{ scale: 0.95 }}
             >
-              {isOpen ? <FiX size={44} /> : <FiMenu size={34} />}
+              {isOpen ? <FiX size={38} /> : <FiMenu size={34} />}
             </motion.button>
           </div>
 
@@ -165,7 +165,7 @@ const Header = () => {
           <AnimatePresence>
             {isOpen && (
               <motion.div
-                className="fixed inset-0 lg:hidden z-40"
+                className="fixed inset-0 h-60 sm:h-80 md:h-auto lg:hidden z-40"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -173,7 +173,9 @@ const Header = () => {
                 style={{ backgroundColor: "rgba(0,0,0,0.95)" }}
               >
                 <motion.div
-                  className="h-screen flex bg-black flex-col items-center justify-center space-y-8 p-8"
+                  className="h-screen w-full flex
+                   bg-black flex-col items-center 
+                   justify-center space-y-4 "
                   variants={{
                     visible: {
                       transition: {
@@ -188,15 +190,17 @@ const Header = () => {
                       key={path}
                       variants={navItemVariants}
                       whileHover={{ scale: 1.05 }}
+                      className="w-full text-center"
                     >
                       <NavLink
                         to={path}
-                        className="flex items-center gap-3 font-lilita
-                         leading-15 tracking-widest text-4xl font-medium
-                          text-white hover:text-red-900 transition-colors"
+                        className="flex items-center justify-center gap-2 sm:gap-3 font-lilita leading-normal tracking-wider sm:tracking-widest text-xl sm:text-3xl md:text-4xl lg:text-5xl font-medium
+                text-white hover:text-red-900 transition-colors px-4 py-2 sm:py-3"
                         onClick={() => setIsOpen(false)}
                       >
-                        <span className="text-amber-600">{icon}</span>
+                        <span className="text-amber-600 text-2xl sm:text-3xl md:text-4xl">
+                          {icon}
+                        </span>
                         {label}
                       </NavLink>
                     </motion.div>

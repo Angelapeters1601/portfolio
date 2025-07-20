@@ -5,10 +5,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 const Loader = () => {
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center px-6 transition-all duration-700"
+      className="min-h-screen  overflow-x-hidden w-full flex items-center justify-center px-6 transition-all duration-700"
       style={{ backgroundColor: "#2e1f1a" }}
     >
-      <div className="w-full max-w-3xl space-y-10 animate-fade-in">
+      <div className="w-full overflow-x-hidden max-w-3xl space-y-10 animate-fade-in">
         {/* Title Skeleton */}
         <Skeleton
           height={60}
@@ -28,7 +28,7 @@ const Loader = () => {
         />
 
         {/* Two-column skeletons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid overflow-x-hidden grid-cols-1 sm:grid-cols-2 gap-6">
           <Skeleton
             height={180}
             baseColor="#4b2e2a"
