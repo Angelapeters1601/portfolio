@@ -62,8 +62,6 @@ This portfolio reflects my growth and identity as a developer. It highlights sel
 
 ✨ 3D Floating Particle Background (Three.js)
 
-🌗 Dark/Light Theme Toggle
-
 📊 Dynamic Project & Skill Display
 
 📄 Resume View & Download Option
