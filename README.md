@@ -1,12 +1,98 @@
-# React + Vite
+# 🌟 Angela Nwattah — Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio project! I'm a passionate Frontend Web Developer focused on building visually striking, interactive, and accessible user interfaces. This portfolio was crafted to showcase my work, technical skills, and creativity in frontend development.
 
-Currently, two official plugins are available:
+## 🧠 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio reflects my growth and identity as a developer. It highlights selected projects, skills, and experience in crafting modern web experiences using powerful frontend technologies. It also includes smooth page transitions, floating 3D particles, theme toggling, and animated elements to ensure a memorable browsing experience.
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🔧 *Coming soon — hosted on [Vercel](https://vercel.com/)*
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** React.js (Vite)
+- **Styling:** Tailwind CSS
+- **3D Graphics:** Three.js
+- **Routing:** React Router
+- **UI Enhancements:**
+  - Framer Motion
+  - AOS (Animate On Scroll)
+  - React Awesome Reveal
+  - React Icons
+  - React Fast Marquee
+  - React Loading Skeleton
+  - React Typewriter
+- **Email Integration:** Email.js
+- **Deployment:** Vercel
+- **Version Control:** Git + GitHub
+
+---
+
+## 📁 Folder Structure
+
+```bash
+├── public/
+├── src/
+│   ├── components/       # Reusable components (buttons, cards, toggles, etc.)
+│   ├── pages/            # Main pages (Home, About, Projects, Contact, etc.)
+│   ├── sections/         # Individual layout sections
+│   ├── assets/           # Images, icons, 3D models
+│   ├── App.jsx
+│   └── main.jsx
+├── .env
+├── README.md
+└── package.json
+
+💡 Features
+🌈 Modern & Responsive Design
+
+♿ Accessible UI/UX with semantic HTML
+
+💬 Smooth Page Transitions & Animations
+
+📱 Mobile-First Layout
+
+🌐 Optimized SEO Meta Tags
+
+📫 Functional Contact Form via Email.js
+
+✨ 3D Floating Particle Background (Three.js)
+
+🌗 Dark/Light Theme Toggle
+
+📊 Dynamic Project & Skill Display
+
+📄 Resume View & Download Option
+
+🧩 Projects Included
+Here are a few of the featured projects showcased in the portfolio:
+
+🔸 Corley Legal – Legal service website
+
+🔸 JiffyFox – Analytics and data insight platform
+
+🔸 Rate-it – Product review/rating system
+
+🔸 Fast React Co. – Company website made with React
+
+🔸 Brain Buster Quiz – Interactive quiz game
+
+🔸 Chef's Pal – Recipe discovery and manager app
+
+📩 Contact Me
+I'd love to connect and collaborate!
+
+📧 Email: angelnwattah@gmail.com
+
+💼 LinkedIn: linkedin.com/in/nwattah-angela
+
+🐦 Twitter: @mavoolumma
+
+Designed and built with 💖 by Angela Nwattah
+
+
+
