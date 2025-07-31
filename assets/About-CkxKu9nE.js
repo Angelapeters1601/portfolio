@@ -1,0 +1,37 @@
+import{j as e}from"./index-uDefm6m2.js";import{R as t,k as r,g as x,S as d,b as m,d as p,h,i as b,j as g,f as j,l as u,m as f,n as N}from"./index-BxeGTMaL.js";import{w as y,x as o,n as l,r as v,d as w,q as S}from"./index-BsE0nkZS.js";import{m as n}from"./proxy-BUtMebIR.js";const i=r`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`,F=r`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;r`
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;const k=r`
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`,R=()=>{const c=[{name:"HTML5",icon:e.jsx(y,{className:"text-[#E34F26]"}),progress:95},{name:"CSS3",icon:e.jsx(o,{className:"text-[#1572B6]"}),progress:90},{name:"JavaScript",icon:e.jsx(x,{className:"text-[#F7DF1E]"}),progress:88},{name:"React.js",icon:e.jsx(l,{className:"text-[#61DAFB]"}),progress:92},{name:"Next.js",icon:e.jsx(d,{className:"text-white"}),progress:85},{name:"Redux",icon:e.jsx(m,{className:"text-[#764ABC]"}),progress:87},{name:"Redux Toolkit",icon:e.jsx(m,{className:"text-[#764ABC]"}),progress:90},{name:"Tailwind CSS",icon:e.jsx(p,{className:"text-[#06B6D4]"}),progress:94},{name:"Bootstrap",icon:e.jsx(h,{className:"text-[#7952B3]"}),progress:95},{name:"Material UI",icon:e.jsx(b,{className:"text-[#007FFF]"}),progress:83},{name:"Styled Components",icon:e.jsx(g,{className:"text-[#DB7093]"}),progress:85},{name:"Figma",icon:e.jsx(v,{className:"text-[#F24E1E]"}),progress:80},{name:"GitHub",icon:e.jsx(w,{className:"text-white"}),progress:91},{name:"MongoDB",icon:e.jsx(j,{className:"text-[#47A248]"}),progress:85},{name:"NodeJs",icon:e.jsx(S,{className:"text-[#E34F26]"}),progress:90},{name:"Express.js",icon:e.jsx(u,{className:"text-white"}),progress:80},{name:"Supabase",icon:e.jsx(f,{className:"text-[#3ECF8E]"}),progress:92},{name:"Responsive Design",icon:e.jsx(o,{className:"text-[#1572B6]"}),progress:93},{name:"Animations",icon:e.jsx(l,{className:"text-[#61DAFB]"}),progress:90},{name:"Three.js",icon:e.jsx(N,{className:"text-[#b62f99]"}),progress:80}];return e.jsxs("div",{className:"min-h-screen bg-customBlack overflow-x-hidden text-amber-50 overflow-hidden",children:[e.jsx("div",{className:"fixed inset-0 overflow-hidden pointer-events-none",children:[...Array(8)].map((s,a)=>e.jsx(n.div,{className:"absolute rounded-full bg-amber-800/10",initial:{scale:0,opacity:0,x:Math.random()*100-50,y:Math.random()*100-50},animate:{scale:[0,1,0],opacity:[0,.2,0],x:[0,Math.random()*200-100],y:[0,Math.random()*200-100]},transition:{duration:20+Math.random()*20,repeat:1/0,repeatType:"reverse",ease:"easeInOut"},style:{width:`${Math.random()*300+100}px`,height:`${Math.random()*300+100}px`}},a))}),e.jsx(t,{keyframes:i,duration:800,triggerOnce:!0,children:e.jsx("section",{className:"relative pt-20 md:pt-28 pb-12 md:pb-16 text-center",children:e.jsxs("div",{className:"container mt-16 md:mt-20 mx-auto px-4 sm:px-6 relative z-10",children:[e.jsxs("h1",{className:"text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-amber-100 mb-3 md:mb-4",children:["About ",e.jsx("span",{className:"text-amber-300",children:"Me"})]}),e.jsxs("p",{className:"text-lg sm:text-xl text-amber-100/80 max-w-3xl mx-auto px-4",children:["Frontend Developer specializing in modern frameworks to deliver exquisite digital experiences. I build"," ",e.jsx("span",{className:"text-amber-300",children:"fast"}),","," ",e.jsx("span",{className:"text-amber-300",children:"scalable"}),", and"," ",e.jsx("span",{className:"text-amber-300",children:"visually stunning"})," web applications with a strong focus on performance and user-centered design."]})]})})}),e.jsxs("section",{className:"container mx-auto px-4 sm:px-6 py-8 md:py-12 relative z-10",children:[e.jsx(t,{keyframes:i,duration:800,triggerOnce:!0,children:e.jsxs("h2",{className:"text-2xl sm:text-3xl font-lilita text-amber-100 mb-6 md:mb-8 text-center",children:["My ",e.jsx("span",{className:"text-amber-300",children:"Tech Stack"})]})}),e.jsx("div",{className:"grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6",children:c.map((s,a)=>e.jsx(t,{keyframes:k,duration:600,delay:a*50,triggerOnce:!0,children:e.jsx(n.div,{whileHover:{y:-5,scale:1.03},transition:{type:"spring",stiffness:300},className:"h-full flex flex-col",children:e.jsxs("div",{className:"bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-xl p-4 sm:p-6 backdrop-blur-sm shadow-lg flex flex-col flex-grow",children:[" ",e.jsx("div",{className:"text-3xl sm:text-4xl mb-2 sm:mb-3 flex justify-center",children:s.icon}),e.jsx("h3",{className:"text-amber-100 font-medium text-center mb-2 sm:mb-3 text-sm sm:text-base",children:s.name}),e.jsxs("div",{className:"mt-auto w-full",children:[" ",e.jsx("div",{className:"w-full bg-amber-900/20 rounded-full h-1.5 sm:h-2 mb-1 sm:mb-2",children:e.jsx(n.div,{initial:{width:0},animate:{width:`${s.progress}%`},transition:{duration:1.5,delay:a*.05},className:"h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"})}),e.jsxs("span",{className:"text-amber-300 text-xs sm:text-sm font-mono block text-center",children:[s.progress,"%"]})]})]})})},a))})]}),e.jsx("section",{className:"container mx-auto px-4 sm:px-6 py-8 md:py-12 relative z-10",children:e.jsx(t,{keyframes:i,duration:800,delay:200,triggerOnce:!0,children:e.jsxs("div",{className:"bg-gradient-to-br from-amber-900/10 via-black/50 to-amber-900/5 border border-amber-800/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm shadow-xl",children:[e.jsxs("h2",{className:"text-2xl sm:text-3xl font-lilita text-amber-100 mb-4 sm:mb-6",children:["Who ",e.jsx("span",{className:"text-amber-300",children:"I Am"})]}),e.jsx(t,{keyframes:F,duration:600,cascade:!0,damping:.1,triggerOnce:!0,children:e.jsxs("div",{className:"space-y-3 sm:space-y-4 text-sm sm:text-base text-amber-100/90",children:[e.jsxs("p",{children:["I'm ",e.jsx("span",{className:"text-amber-300",children:"Angela S. Nwattah"}),", a passionate Frontend Developer with expertise in building modern, responsive, user friendly and high-performance web applications."]}),e.jsxs("p",{children:["My journey in web development started with a love for design and evolved into a deep appreciation for clean, efficient code. I specialize in"," ",e.jsx("span",{className:"text-amber-300",children:"HTML"}),","," ",e.jsx("span",{className:"text-amber-300",children:"CSS"}),","," ",e.jsx("span",{className:"text-amber-300",children:"JavaScript"}),","," ",e.jsx("span",{className:"text-amber-300",children:"React.js"}),","," ",e.jsx("span",{className:"text-amber-300",children:"Redux"}),","," ",e.jsx("span",{className:"text-amber-300",children:"Redux Toolkit"}),","," ",e.jsx("span",{className:"text-amber-300",children:"Next.js"}),", and"," ",e.jsx("span",{className:"text-amber-300",children:"Tailwind CSS"}),", creating seamless user experiences."]}),e.jsx("p",{children:"I love learning new languages and tools, it keeps me growing and adaptable. I believe every new language teaches one a new way of thinking, and thats exciting to me 😊"}),e.jsx("p",{children:"When I'm not coding, I enjoy contributing to open-source projects, experimenting with new animations, and mentoring aspiring developers."})]})})]})})})]})};export{R as default};
