@@ -7,11 +7,11 @@ import { useInView } from "react-intersection-observer";
 import { FaQuoteLeft } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 import Emma from "../assets/emma.JPG";
-import John from "../assets/john.jpg";
-import Yisreal from "../assets/yisreal.jpg";
-import Ocheiga from "../assets/ocheiga.jpg";
-import Kwado from "../assets/kwado.jpg";
-import Supreme from "../assets/supreme.jpg";
+import John from "../assets/john.JPG";
+import Yisreal from "../assets/yisreal.JPG";
+import Ocheiga from "../assets/ocheiga.JPG";
+import Kwado from "../assets/kwado.JPG";
+import Supreme from "../assets/supreme.JPG";
 
 // Custom animations
 const customFadeIn = keyframes`
