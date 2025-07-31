@@ -1,26 +1,48 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppLayout from "./components/AppLayout";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
-import Designs from "./components/Designs";
+import { useState, useEffect, Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Loader from "./ui/Loader";
+
+const AppLayout = lazy(() => import("./components/AppLayout"));
+const Home = lazy(() => import("./pages/Home"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Resume = lazy(() => import("./pages/Resume"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="design" element={<Designs />} />
-          <Route path="resume" element={<Resume />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="max-w-[100vw] overflow-clip">
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="relative w-full h-full">
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<AppLayout />}>
+                <Route index element={<Home />} />
+                <Route path="projects" element={<Projects />} />
+                <Route path="projects/:id" element={<ProjectDetails />} />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="resume" element={<Resume />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </div>
+      </BrowserRouter>
+    </div>
   );
 }
 

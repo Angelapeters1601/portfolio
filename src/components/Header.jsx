@@ -2,17 +2,9 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import {
-  FaPaintBrush,
-  FaCode,
-  FaUser,
-  FaEnvelope,
-  FaFileAlt,
-} from "react-icons/fa";
+import { FaCode, FaUser, FaEnvelope, FaFileAlt } from "react-icons/fa";
 
 const navLinks = [
-  //   { path: "/", label: "Home", icon: <FaHome /> },
-  { path: "/design", label: "Designs", icon: <FaPaintBrush /> },
   { path: "/projects", label: "Projects", icon: <FaCode /> },
   { path: "/about", label: "About", icon: <FaUser /> },
   { path: "/contact", label: "Contact", icon: <FaEnvelope /> },
@@ -23,78 +15,92 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+  const [atParallax, setAtParallax] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      const parallaxSection = document.getElementById("parallax");
+      if (parallaxSection) {
+        const parallaxRect = parallaxSection.getBoundingClientRect();
+        setAtParallax(parallaxRect.bottom <= 100);
+      }
       setIsScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Circular reveal animation variants
+  const headerColor = atParallax
+    ? "bg-red-900 text-amber-200"
+    : isScrolled
+      ? "bg-amber-500/40 backdrop-blur-md text-amber-100"
+      : "bg-red-900/90 backdrop-blur-sm text-amber-200";
+
+  const linkColor = atParallax
+    ? "text-white hover:text-amber-300"
+    : "text-customBlack hover:text-amber-300";
+
+  const activeLinkColor = atParallax ? "text-amber-300" : "text-amber-600";
+
   const circleVariants = {
     hidden: {
-      clipPath: "circle(0% at 95% 5%)",
+      clipPath: "circle(30% at 90% 10%)",
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
+        type: "easeOut",
+        duration: 0.4,
       },
     },
     visible: {
       clipPath: "circle(150% at 95% 5%)",
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
+        type: "easeOut",
+        duration: 0.4,
         staggerChildren: 0.1,
-        delayChildren: 0.3,
+        delayChildren: 0.2,
       },
     },
   };
 
   const navItemVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-      },
-    },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <motion.header
-      className={`fixed w-full z-50 ${isScrolled ? "bg-transparent/10 backdrop-blur-md shadow-sm py-2" : "bg-white/80 backdrop-blur-sm py-4"}`}
-      initial={{ y: -100, opacity: 0 }}
+      className={`fixed w-full z-50 ${headerColor} transition-all duration-300 ${
+        isScrolled ? "py-2 shadow-sm" : "py-4"
+      }`}
+      initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="container mx-auto px-6 lg:px-8">
         <nav className="flex justify-between items-center py-2">
           {/* Logo */}
           <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
           >
             <NavLink
               to="/"
-              className="text-3xl lg:text-4xl font-bold tracking-widest 
-              font-sevillana text-customBlack hover:text-pink-700 transition-colors duration-300"
+              className={`text-4xl lg:text-5xl font-bold tracking-widest 
+                font-sevillana transition-colors duration-200 ${
+                  atParallax
+                    ? "text-white hover:text-amber-300"
+                    : "text-amber-600 hover:text-amber-500"
+                }`}
             >
-              <span>Nwattah</span> Angela.
+              <span>Angela</span>
             </NavLink>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <motion.div className="hidden lg:flex space-x-1">
+          <div className="hidden lg:flex space-x-1">
             {navLinks.map(({ path, label }, index) => (
-              <motion.div
+              <div
                 key={path}
                 className="relative px-1 py-2"
                 onMouseEnter={() => setHoveredLink(index)}
@@ -103,45 +109,63 @@ const Header = () => {
                 <NavLink
                   to={path}
                   className={({ isActive }) =>
-                    `relative z-10 px-4 py-2 text-lg font-mono font-medium transition-colors duration-300 flex items-center gap-2 ${
-                      isActive
-                        ? "text-customPink"
-                        : "text-customGray hover:text-pink-600"
-                    }`
+                    `relative z-10 px-4 py-2 text-lg font-mono 
+                    font-medium transition-colors duration-200 flex 
+                    items-center gap-2 ${isActive ? activeLinkColor : linkColor}`
                   }
                 >
                   {navLinks[index].icon}
                   {label}
                 </NavLink>
                 {hoveredLink === index && (
+                  <>
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 0.2 }}
+                    />
+                    <motion.div
+                      className="absolute bottom-1 left-0 right-0 h-0.5 bg-amber-300"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 0.2, delay: 0.05 }}
+                    />
+                  </>
+                )}
+                {hoveredLink === index && (
                   <motion.div
-                    layoutId="navHover"
-                    className="absolute inset-0 bg-gray-100 rounded-lg"
+                    className="absolute inset-0 bg-black/20 rounded-md"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    transition={{ duration: 0.15 }}
                   />
                 )}
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden z-50">
-            <button
+            <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-customGray hover:text-pink-500 transition-colors"
+              className={`p-2 transition-colors ${
+                atParallax
+                  ? "text-white hover:text-amber-300"
+                  : "text-stone-400 hover:text-amber-500"
+              }`}
               aria-label="Menu"
+              whileTap={{ scale: 0.95 }}
             >
-              {isOpen ? <FiX size={44} /> : <FiMenu size={34} />}
-            </button>
+              {isOpen ? <FiX size={38} /> : <FiMenu size={34} />}
+            </motion.button>
           </div>
 
           {/* Mobile Menu - Circular Reveal */}
           <AnimatePresence>
             {isOpen && (
               <motion.div
-                className="fixed h-200 inset-0 lg:hidden z-40 flex items-center justify-center"
+                className="fixed inset-0 h-60 sm:h-80 md:h-auto lg:hidden z-40"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -149,12 +173,14 @@ const Header = () => {
                 style={{ backgroundColor: "rgba(0,0,0,0.95)" }}
               >
                 <motion.div
-                  className="flex flex-col items-center justify-center space-y-8 p-8"
+                  className="h-screen w-full flex
+                   bg-black flex-col items-center 
+                   justify-center space-y-4 "
                   variants={{
                     visible: {
                       transition: {
                         staggerChildren: 0.1,
-                        delayChildren: 0.3,
+                        delayChildren: 0.2,
                       },
                     },
                   }}
@@ -164,14 +190,17 @@ const Header = () => {
                       key={path}
                       variants={navItemVariants}
                       whileHover={{ scale: 1.05 }}
+                      className="w-full text-center"
                     >
                       <NavLink
                         to={path}
-                        className="flex items-center gap-3 font-lilita leading-15
-                        tracking-widest text-4xl font-medium text-white hover:text-pink-400 transition-colors"
+                        className="flex items-center justify-center gap-2 sm:gap-3 font-lilita leading-normal tracking-wider sm:tracking-widest text-xl sm:text-3xl md:text-4xl lg:text-5xl font-medium
+                text-white hover:text-red-900 transition-colors px-4 py-2 sm:py-3"
                         onClick={() => setIsOpen(false)}
                       >
-                        <span className="text-pink-400">{icon}</span>
+                        <span className="text-amber-600 text-2xl sm:text-3xl md:text-4xl">
+                          {icon}
+                        </span>
                         {label}
                       </NavLink>
                     </motion.div>
