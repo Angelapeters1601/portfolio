@@ -6,7 +6,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { FaQuoteLeft } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
-import Emma from "../assets/emma.jpg";
+import Emma from "../assets/emma.JPG";
 import John from "../assets/john.jpg";
 import Yisreal from "../assets/yisreal.jpg";
 import Ocheiga from "../assets/ocheiga.jpg";
