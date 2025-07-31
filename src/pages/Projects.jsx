@@ -204,7 +204,7 @@ const Projects = () => {
         "Three.js",
       ],
       links: {
-        live: "https://onefarmtech.com/",
+        live: "https://github.com/angelapeters1601.io/portfolio",
         code: "https://github.com/angelapeters1601/portfolio",
       },
       accentColor: "bg-[#EF4444]/20",
@@ -228,7 +228,7 @@ const Projects = () => {
         "Framer motion",
       ],
       links: {
-        live: "https://onefarmtech.com/",
+        live: "https://github.com/angelapeters1601.io/chef-sPal",
         code: "https://github.com/angelapeters1601/chef-sPal",
       },
       accentColor: "bg-[#FFD700]/20",

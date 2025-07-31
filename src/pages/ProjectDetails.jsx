@@ -270,7 +270,7 @@ const ProjectDetails = () => {
       ],
       image: ChefImg,
       links: {
-        live: "https://onefarmtech.com/",
+        live: "https://github.com/angelapeters1601.io/chef-sPal",
         code: "https://github.com/angelapeters1601/chef-sPal",
       },
       accentColor: "bg-[#47A248]/20",
@@ -309,7 +309,7 @@ const ProjectDetails = () => {
       ],
       image: MeImg,
       links: {
-        live: "https://brain-buster-six.vercel.app",
+        live: "https://github.com/angelapeters1601.io/portfolio",
         code: "https://github.com/angelapeters1601/portfolio",
       },
       accentColor: "bg-[#FFCA28]/20",
