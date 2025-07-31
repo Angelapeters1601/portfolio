@@ -6,12 +6,12 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { FaQuoteLeft } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
-import Emma from "../assets/Emma.jpg";
-import John from "../assets/DrJohn.jpg";
+import Emma from "../assets/emma.jpg";
+import John from "../assets/john.jpg";
 import Yisreal from "../assets/yisreal.jpg";
-import Ocheiga from "../assets/Ocheiga.jpg";
-import Kwado from "../assets/Kwado.jpg";
-import Supreme from "../assets/Supreme.jpg";
+import Ocheiga from "../assets/ocheiga.jpg";
+import Kwado from "../assets/kwado.jpg";
+import Supreme from "../assets/supreme.jpg";
 
 // Custom animations
 const customFadeIn = keyframes`
