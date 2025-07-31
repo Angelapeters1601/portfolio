@@ -8,8 +8,7 @@ This portfolio reflects my growth and identity as a developer. It highlights sel
 
 ## 🚀 Live Demo
 
-🔧 *Coming soon — hosted on [Vercel](https://vercel.com/)*
-
+🔧 hosted on [Github]https://github.com/angelapeters1601.io/portfolio
 ---
 
 ## 🛠️ Tech Stack
