@@ -26,7 +26,7 @@ import {
 import { MdDescription, MdOutlineFeaturedPlayList } from "react-icons/md";
 import RateItImg from "../assets/rate-it.png";
 import PizzaImg from "../assets/pizza.jpeg";
-import ChefsPalImg from "../assets/chefspalImg.gif";
+import chefspalImg from "../assets/chefspalImg.gif";
 import BrainBusterImg from "../assets/brain-buster.png";
 import MeImg from "../assets/me.jpg";
 import CorleyImg from "../assets/corley-legal.png";
@@ -268,7 +268,7 @@ const ProjectDetails = () => {
         "Memoisation",
         "Email.js",
       ],
-      image: ChefsPalImg,
+      image: chefspalImg,
       links: {
         live: "https://onefarmtech.com/",
         code: "https://github.com/angelapeters1601/chef-sPal",
