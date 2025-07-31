@@ -80,6 +80,8 @@ const Projects = () => {
         "Lazy-loading & Suspense",
         "Swiper.js",
         "React-Awesome-Reveal",
+        "React-fast-marquee",
+        "React-countup",
         "Framer motion",
         "Plesk",
       ],
@@ -100,6 +102,7 @@ const Projects = () => {
         "React",
         "JavaScript",
         "Tailwind CSS",
+        "Material UI",
         "Supabase",
         "Framer Motion",
         "Heroicons",
@@ -267,7 +270,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-24 relative z-10">
+      <div className="containermx-auto px-4 sm:px-6 py-12 md:py-24 relative z-10">
         <Reveal keyframes={customFadeIn} duration={800} triggerOnce>
           <div className="text-center mb-12 md:mb-20">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-amber-900 dark:text-amber-100 mb-3 md:mb-4">
