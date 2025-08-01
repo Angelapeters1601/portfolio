@@ -8,8 +8,7 @@ This portfolio reflects my growth and identity as a developer. It highlights sel
 
 ## 🚀 Live Demo
 
-🔧 hosted on [Github]https://github.com/angelapeters1601.io/portfolio
----
+## 🔧 hosted on [Vercel]https://portfolio-g2pa.vercel.app/
 
 ## 🛠️ Tech Stack
 
@@ -93,3 +92,4 @@ Designed and built with 💖 by Angela Nwattah
 
 
 
+```
