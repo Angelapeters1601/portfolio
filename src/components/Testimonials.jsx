@@ -6,12 +6,6 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { FaQuoteLeft } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
-import Emma from "../assets/emma.JPG";
-import John from "../assets/john.JPG";
-import Yisreal from "../assets/yisreal.JPG";
-import Ocheiga from "../assets/ocheiga.JPG";
-import Kwado from "../assets/kwado.JPG";
-import Supreme from "../assets/supreme.JPG";
 
 // Custom animations
 const customFadeIn = keyframes`
@@ -45,7 +39,7 @@ const Testimonials = () => {
       content:
         "As Angela's mentor, I've had the privilege of watching her evolve into an exceptional frontend developer. Her work on our dashboard which drove a 40% increase in user engagement, demonstrates her mastery of React and meticulous attention to detail. But beyond the technical wins, what impresses me most is her growth mindset. She proactively seeks feedback, implements improvements with precision, and now mentors others with the same patience she once showed as my junior. Angela is the rare developer who balances creativity with discipline. Whether it's optimizing performance or advocating for UX refinements, she approaches problems with a seasoned perspective that belies her years. Any team would be lucky to have her.",
       rating: 4,
-      image: Emma,
+      image: "/emma.jpg",
     },
     {
       id: 2,
@@ -54,7 +48,7 @@ const Testimonials = () => {
       content:
         "Working with Angela was a game-changer for our project. She didn't just deliver a stunning redesign—she built us a complete full-stack application with an intuitive dashboard that exceeded all expectations. Her implementation of complex animations was flawless, yet she maintained perfect performance scores across the board. Beyond the technical brilliance, what stood out was her ability to translate my vision into reality while adding smart improvements I hadn't even considered. The end result? An application that's as beautiful as it is powerful, and a client who couldn't be more pleased.",
       rating: 5,
-      image: Yisreal,
+      image: "/yisreal.jpg",
     },
     {
       id: 3,
@@ -63,7 +57,7 @@ const Testimonials = () => {
       content:
         "Angela brings a rare combination of technical skill and collaborative spirit to every project. She communicates clearly, elevates team dynamics, and has an eye for detail that ensures excellence in execution. Working with her is always a seamless and enjoyable experience, she's the kind of professional who makes good teams great.",
       rating: 5,
-      image: Ocheiga,
+      image: "/ocheiga.jpg",
     },
     {
       id: 4,
@@ -72,7 +66,7 @@ const Testimonials = () => {
       content:
         "Angela is a remarkably fast learner who adapts to new challenges effortlessly. Every time I've needed her expertise, she's delivered tailored solutions that exceed expectations, often finding clever fixes for problems we didn't even realize could be optimized. Her ability to quickly understand complex systems and provide elegant fixes is invaluable.",
       rating: 4,
-      image: Kwado,
+      image: "/kwado.jpg",
     },
     {
       id: 5,
@@ -81,7 +75,7 @@ const Testimonials = () => {
       content:
         "Angela built me a custom admin dashboard for my interior design business that completely changed how I work. Before, I was juggling spreadsheets and missing follow-ups, now everything's organized in one place. The dashboard helps me track clients, manage projects, and even automates parts of my marketing. Within two months, I saw more referrals coming in and my bookings increased by almost 40%. Best part? I spend less time on admin and more time designing.",
       rating: 5,
-      image: Supreme,
+      image: "/supreme.jpg",
     },
     {
       id: 6,
@@ -90,7 +84,7 @@ const Testimonials = () => {
       content:
         "When I finally centered a div without Flexbox, Angela made me screenshot it as a trophy 😂. She celebrates small wins but also gently pushes me - last week she had me rebuild Netflix's navbar (it's harder than it looks!). Baby steps feel like victories with her.",
       rating: 5,
-      image: John,
+      image: "/john.jpg",
     },
   ];
 
