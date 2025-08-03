@@ -165,7 +165,7 @@ const Header = () => {
           <AnimatePresence>
             {isOpen && (
               <motion.div
-                className="fixed inset-0 h-60 sm:h-80 md:h-auto lg:hidden z-40"
+                className="fixed inset-0 h-70 sm:h-80 md:h-auto lg:hidden z-40"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
