@@ -151,6 +151,30 @@ const Projects = () => {
       icon: <SiTailwindcss className="text-black dark:text-white" />,
     },
     {
+      id: "chefspal",
+      title: "Chef's Pal",
+      description:
+        "Chef's Pal is a dynamic recipe discovery and meal-planning web application inspired by simple and intuitive cooking experiences. It allows users to explore recipes based on categories such as mealtime, meal type, and dietary preferences (vegan or non-vegan). Users can search for specific meals, save their favorite recipes for quick access, and generate a shopping list automatically populated with essential ingredients.",
+      tags: [
+        "React.js",
+        "JavaScript",
+        "CSS modules",
+        "Bootstrap",
+        "React Hooks",
+        "ContextAPI",
+        "Memoisation",
+        "React Router",
+        "Email.js",
+        "Framer motion",
+      ],
+      links: {
+        live: "https://chef-s-pal.vercel.app/",
+        code: "https://github.com/angelapeters1601/chef-sPal",
+      },
+      accentColor: "bg-[#FFD700]/20",
+      icon: <SiMongodb className="text-[#47A248]" />,
+    },
+    {
       id: "fast-react-pizza",
       title: "Fast React Pizza Co.",
       description:
@@ -204,34 +228,10 @@ const Projects = () => {
         "Three.js",
       ],
       links: {
-        live: "https://github.com/angelapeters1601.io/portfolio",
+        live: "https://portfolio-2d4m.vercel.app/",
         code: "https://github.com/angelapeters1601/portfolio",
       },
       accentColor: "bg-[#EF4444]/20",
-      icon: <SiMongodb className="text-[#47A248]" />,
-    },
-    {
-      id: "chefspal",
-      title: "Chef's Pal",
-      description:
-        "Chef's Pal is a dynamic recipe discovery and meal-planning web application inspired by simple and intuitive cooking experiences. It allows users to explore recipes based on categories such as mealtime, meal type, and dietary preferences (vegan or non-vegan). Users can search for specific meals, save their favorite recipes for quick access, and generate a shopping list automatically populated with essential ingredients.",
-      tags: [
-        "React.js",
-        "JavaScript",
-        "CSS modules",
-        "Bootstrap",
-        "React Hooks",
-        "ContextAPI",
-        "Memoisation",
-        "React Router",
-        "Email.js",
-        "Framer motion",
-      ],
-      links: {
-        live: "https://github.com/angelapeters1601.io/chef-sPal",
-        code: "https://github.com/angelapeters1601/chef-sPal",
-      },
-      accentColor: "bg-[#FFD700]/20",
       icon: <SiMongodb className="text-[#47A248]" />,
     },
   ];

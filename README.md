@@ -8,7 +8,7 @@ This portfolio reflects my growth and identity as a developer. It highlights sel
 
 ## 🚀 Live Demo
 
-## 🔧 hosted on [Vercel]https://portfolio-g2pa.vercel.app/
+## 🔧 hosted on [Vercel]https://portfolio-2d4m.vercel.app/
 
 ## 🛠️ Tech Stack
 

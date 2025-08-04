@@ -15,6 +15,7 @@ import { SiNextdotjs } from "react-icons/si";
 import Testimonials from "../components/Testimonials";
 import Me from "../assets/me.jpg";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 // Enhanced 3D React Logo Component with smoother animation
 const ReactLogo = () => {
@@ -432,24 +433,24 @@ const Home = () => {
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <a
-                  href="#projects"
+                <Link
+                  to="projects"
                   className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-lg hover:shadow-amber-500/20"
                 >
                   View Projects
-                </a>
+                </Link>
               </motion.div>
               <motion.div
                 whileHover={{ y: -5, scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="inline-block border-2 border-amber-500 text-amber-300 font-medium py-3 px-8 rounded-full hover:bg-amber-900/30 transition-colors"
                 >
                   Contact Me
-                </a>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>
