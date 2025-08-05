@@ -28,6 +28,7 @@ const Resume = () => {
       "React.js",
       "Next.js",
       "Redux Toolkit",
+      "React Query",
       "Tailwind CSS",
       "Bootstrap",
       "Styled Components",
