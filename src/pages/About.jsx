@@ -23,6 +23,7 @@ import {
   SiExpress,
   SiSupabase,
   SiThreedotjs,
+  SiReactquery,
 } from "react-icons/si";
 
 // Custom animations
@@ -106,6 +107,11 @@ const About = () => {
       name: "Redux Toolkit",
       icon: <SiRedux className="text-[#764ABC]" />,
       progress: 90,
+    },
+    {
+      name: "React Query",
+      icon: <SiReactquery className="text-[#0eaa6e]" />,
+      progress: 86,
     },
     {
       name: "Tailwind CSS",
