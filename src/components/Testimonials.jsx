@@ -39,7 +39,8 @@ const Testimonials = () => {
       content:
         "As Angela's mentor, I've had the privilege of watching her evolve into an exceptional frontend developer. Her work on our dashboard which drove a 40% increase in user engagement, demonstrates her mastery of React and meticulous attention to detail. But beyond the technical wins, what impresses me most is her growth mindset. She proactively seeks feedback, implements improvements with precision, and now mentors others with the same patience she once showed as my junior. Angela is the rare developer who balances creativity with discipline. Whether it's optimizing performance or advocating for UX refinements, she approaches problems with a seasoned perspective that belies her years. Any team would be lucky to have her.",
       rating: 4,
-      image: "/emma.jpg",
+      // image: "/emma.jpg",
+      image: `${import.meta.env.BASE_URL}emma.jpg`,
     },
     {
       id: 2,
