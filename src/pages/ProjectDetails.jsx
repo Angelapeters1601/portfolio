@@ -31,6 +31,8 @@ import BrainBusterImg from "../assets/brain-buster.png";
 import MeImg from "../assets/me.jpg";
 import CorleyImg from "../assets/corley-legal.png";
 import JiffyfoxImg from "../assets/jiffyfox.jpg";
+import SpiffyfoxImg from "../assets/spiffyImg.png";
+import GatlingImg from "../assets/gatlingImg.png";
 
 // Custom animations
 const customFadeIn = keyframes`
@@ -328,6 +330,77 @@ const ProjectDetails = () => {
       ],
     },
     {
+      id: "spiffyfox",
+      title: "spiffyFox",
+      description:
+        "SpiffyFox is a modern, scalable multi-service booking platform designed to connect users with trusted local professionals for a wide range of on-demand services, including residential and commercial cleaning, deep cleaning, home organization, power washing, junk removal, packing and unpacking, personal assistance, and more. Inspired by platforms like TaskRabbit and Jiffyfox.com, SpiffyFox delivers a seamless experience through a sleek, interactive interface that simplifies requesting, managing, and fulfilling service bookings. The platform features dedicated client and contractor account options, allowing users to either request services as clients or register as contractors to apply for jobs and manage contracts efficiently.",
+      tags: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Material UI",
+        "Supabase",
+        "Framer Motion",
+        "React-icons",
+        "Three.js",
+        "React-Router-Dom",
+        "Lazy-loading & Suspense",
+        "Cloudinary",
+        "Google Maps API",
+        "map leaflet",
+        "ipinfo",
+        "lucide-react",
+        "react-chartjs",
+        "swiper.js",
+        "react-loading-skeleton",
+        "Plesk",
+        "ionos",
+      ],
+      image: SpiffyfoxImg,
+      links: {
+        live: "https://spiffyfox.com",
+        code: "https://github.com/angelapeters1601/spiffyfox",
+      },
+      accentColor: "bg-[#10B981]/20",
+      icon: <SiReact className="text-[#10B981]" />,
+      challenges:
+        "Implementing a scalable authentication system for both clients and contractors, designing secure protected routes with role-based access control, and structuring the database architecture to efficiently manage multiple user types, profiles, and service workflows.",
+
+      learnings:
+        "Gained hands-on experience building reusable authentication flows, restructuring protected route logic for better scalability and security, and designing modular auth utility functions to handle client and contractor account management efficiently.",
+      features: [
+        "Real-time authentication and session management for both clients and contractors using Supabase",
+
+        "Dedicated client and contractor account systems with personalized profile creation during registration",
+
+        "Role-based dashboards tailored for clients, contractors, and administrators",
+
+        "Comprehensive admin dashboard for managing users, contractors, bookings, and platform activities",
+
+        "Visitor analytics dashboard to monitor platform traffic, engagement, and user activity insights",
+
+        "Dynamic routing and protected routes powered by React Router",
+
+        "Service booking system enabling clients to request, schedule, and manage services seamlessly",
+
+        "Contract application workflow allowing contractors to browse and apply for available jobs",
+
+        "Interactive analytics and data visualization using Chart.js",
+
+        "Smooth animations and page transitions implemented with Framer Motion",
+
+        "Mobile-first responsive design focused on accessibility and intuitive user experience",
+
+        "Secure user authentication with personalized data handling and session persistence",
+
+        "Scalable frontend architecture with reusable React components and organized state management",
+
+        "Structured Git workflow with version control and GitHub deployment practices",
+
+        "Upcoming features: password recovery functionality and email confirmation during sign-up",
+      ],
+    },
+    {
       id: "jiffyfox",
       title: "JiffyFox",
       description:
@@ -370,6 +443,32 @@ const ProjectDetails = () => {
         "Secure login and personalized user data management",
         "Clean Git Workflow & GitHub Hosting with organized commits",
       ],
+    },
+    {
+      id: "Gatling.pro",
+      title: "Gatling.pro",
+      description: "IN PRODUCTION",
+      tags: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Material UI",
+        "Framer Motion",
+        "Supabase",
+        "Chart.js",
+        "React-Router-Dom",
+        "Vite",
+      ],
+      image: GatlingImg,
+      links: {
+        live: "https://gatling.pro",
+        code: "https://github.com/angelapeters1601/gatling.pro",
+      },
+      accentColor: "bg-[#10B981]/20",
+      icon: <SiReact className="text-[#10B981]" />,
+      challenges: "IN PRODUCTION",
+      learnings: "IN PRODUCTION",
+      features: ["IN PRODUCTION"],
     },
   ];
 

@@ -78,7 +78,9 @@ const Contact = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.h1
             variants={slideInFromLeft}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair tracking-widest text-amber-100 mb-4"
+            className="text-3xl sm:text-4xl
+             md:text-5xl font-bold font-playfair
+              tracking-widest text-amber-100 mb-4"
           >
             Let's Build Something Amazing!
           </motion.h1>

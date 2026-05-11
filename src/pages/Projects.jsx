@@ -58,6 +58,32 @@ const customScaleIn = keyframes`
 const Projects = () => {
   const projects = [
     {
+      id: "Gatling.pro",
+      title: "Gatling.pro",
+      description:
+        "A streamlined service platform designed to connect users with trusted professionals for essential everyday support, including residential and commercial cleaning, deep cleaning, home and office organisation, errands, and personal assistant services. Built with a focus on efficiency and usability, it delivers a clean, intuitive experience that simplifies how users request and manage services.",
+      tags: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Material UI",
+        "Supabase",
+        "Framer Motion",
+        "React-icons",
+        "Three.js",
+        "React-Router-Dom",
+        "Lazy-loading & Suspense",
+        "Plesk",
+        "ionos",
+      ],
+      links: {
+        live: "https:gatling.pro",
+        code: "https://github.com/angelapeters1601/gatling.pro",
+      },
+      accentColor: "bg-[#D4AF37]/40",
+      icon: <SiReact className="text-[#e49e4f]" />,
+    },
+    {
       id: "corley-legal",
       title: "Corley Legal",
       description:
@@ -92,6 +118,41 @@ const Projects = () => {
       },
       accentColor: "bg-[#86dA0C]/20",
       icon: <SiRedux className="text-[#764ABC]" />,
+    },
+    {
+      id: "spiffyfox",
+      title: "spiffyFox",
+      description:
+        "A modern multi-service platform providing seamless access to on-demand solutions such as residential and commercial cleaning, deep cleaning, home organization, power washing, junk removal, packing and unpacking, and personal assistance , all delivered through an intuitive and polished user experience. ",
+      tags: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Material UI",
+        "Supabase",
+        "Framer Motion",
+        "React-icons",
+        "Three.js",
+        "React-Router-Dom",
+        "Lazy-loading & Suspense",
+        "Cloudinary",
+        "Google Maps API",
+        "map leaflet",
+        "ipinfo",
+        "lucide-react",
+        "react-chartjs",
+        "swiper.js",
+        "react-loading-skeleton",
+        "Plesk",
+        "ionos",
+      ],
+      image: "https://spiffyfox.com",
+      links: {
+        live: "https:spiffyfox.com",
+        code: "https://github.com/angelapeters1601/spiffyfox",
+      },
+      accentColor: "bg-[#e64e9f]/20",
+      icon: <SiReact className="text-[#b07fe8]" />,
     },
     {
       id: "jiffyfox",
@@ -193,7 +254,7 @@ const Projects = () => {
         live: "https://angelapeters1601.github.io/fast-react-pizza",
         code: "https://github.com/angelapeters1601/fast-react-pizza",
       },
-      accentColor: "bg-[#FACC15]/20",
+      accentColor: "bg-[#FFA500]/35",
       icon: <FaReact className="text-[#61DAFB]" />,
     },
     {
@@ -231,8 +292,8 @@ const Projects = () => {
         live: "https://portfolio-2d4m.vercel.app/",
         code: "https://github.com/angelapeters1601/portfolio",
       },
-      accentColor: "bg-[#EF4444]/20",
-      icon: <SiMongodb className="text-[#47A248]" />,
+      accentColor: "bg-[#00FFFF]/20",
+      icon: <SiMongodb className="text-[#aaefab]" />,
     },
   ];
 
