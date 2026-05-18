@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import Testimonials from "../components/Testimonials";
-import Me from "../assets/me.jpg";
+import Me from "../assets/resume.jpg";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 

@@ -13,7 +13,7 @@ const Resume = () => {
 
   //resume data
   const resumeData = {
-    name: "Angela S. Nwattah",
+    name: "Angela",
     title: "Frontend Web Developer",
     contact: {
       email: "✉️angelnwattah@gmail.com",
@@ -37,7 +37,14 @@ const Resume = () => {
       "Figma",
       "Node.js",
       "MongoDB",
+      "Moongoose",
       "Github",
+      "Plesk",
+      "DNS Management",
+      "SSL/TLS Configuration",
+      "Deployment",
+      "Cloudinary",
+      "Authentication & Authorization",
       "Agile Methodologies",
       "Responsive Design",
       "Animation",
@@ -50,83 +57,67 @@ const Resume = () => {
     experience: [
       {
         role: "Fullstack Web Developer",
-        company: "Corley Integrated",
+        company: "Corley Integrated, USA (Remote)",
         period: "June 2025 - Present",
         achievements: [
-          "Developed a fullstack paralegal platform using **React.js + Supabase**, featuring:",
-          "Auth System: Implemented email/password + OAuth (Google/GitHub) with Supabase Auth, JWT validation, and protected routes",
-          "Role-Based Access Control: Designed 3-tier permissions (Admin/Lawyers/Clients) with middleware for route protection",
-          "Admin Dashboard: Built a dynamic interface for managing form submissions, client reviews, and document approvals with real-time updates",
-          "Document Management: Created secure file uploads (PDF/DOCX/MP4) with Supabase Storage, including client-specific access controls",
-          "Database Architecture: Designed relational schemas with Row-Level Security (RLS) policies to enforce data privacy between clients and legal teams",
-          "Performance: Reduced initial load time by 50% via code-splitting (React.lazy) and optimized Supabase queries with indexes",
-          "Job Tracking System: Developed an application tracker with status updates (Applied/Review/Approved) and email notifications",
-          "UI/UX Improvements: Implemented a design system with Tailwind CSS, reducing UI inconsistencies by 40%",
-          "Tech Stack: React, Supabase (PostgreSQL), Tailwind, Node.js (for custom functions)",
+          "Built and maintained production-ready web applications using React, Supabase, Node.js, and Tailwind CSS.",
+          "Implemented authentication workflows including account registration, login, session handling, and role-based access control.",
+          "Developed admin dashboards for managing documents, forms, users, and platform activity with secure role-based workflows.",
+          "Built secure file upload systems with client-specific access permissions and protected content workflows.",
+          "Implemented chatbot-to-live-agent escalation features and real-time notification systems.",
+          "Managed deployment workflows, server migrations, DNS configurations, and SSL/​TLS setup using Plesk and IONOS.",
+          "Diagnosed and resolved production issues including mail delivery failures, environment configuration problems, and deployment errors.",
         ],
       },
       {
         role: "Freelance Developer & Technical Upskilling",
-        company: "Self-Employed",
-        period: "November 2024 - May 2025",
+        company: "Freelance",
+        period: "November 2024 - June 2025",
         achievements: [
-          "Completed advanced courses in **React, Node.js, and database design**, building projects",
-          "Freelanced for 3 clients, delivering **responsive UIs** and **Supabase-backed applications**",
-          "Contributed to open-source projects, fixing bugs and improving documentation",
-          "Developed personal projects to showcase skills",
+          "Built fullstack applications, including a legal document management system using React and Supabase.",
+          "Delivered responsive, production-ready web apps for 3+ freelance clients using modern tech stacks.",
+          "Contributed to open-source projects by resolving bugs and improving documentation.",
+          "Completed over 100 hours of advanced training on React, Node.js, and database architecture.",
         ],
       },
 
       {
-        role: "Frontend Developer",
-        company: "Octahedron Software",
+        role: "Frontend Web Developer",
+        company: "Octahedron Software - Nigeria",
         period: "August 2023 - November 2024",
         achievements: [
-          "Designed and implemented responsive web interfaces to enhance user accessibility and experience across multiple devices.",
           "Built scalable and maintainable applications using React, adhering to best practices in component-based architecture.",
-          "Integrated RESTful APIs to enable dynamic content updates and seamless data retrieval for client applications.",
-          "Optimized web application performance by implementing lazy loading, code splitting, and asset compression.",
-          "Ensured cross-browser compatibility, delivering consistent functionality and appearance across major browsers.",
-          "Delivered accessible web applications by implementing WCAG standards to meet diverse user needs.",
-          "Collaborated with cross-functional teams using Git and GitHub to manage version control and streamline workflows.",
+          "Integrated RESTful APIs to support dynamic content rendering and real-time data retrieval.",
+          "Improved frontend performance through lazy loading, code splitting, and asset optimization.",
+          "Implemented accessible and mobile-responsive interfaces aligned with WCAG standards.",
+          "Collaborated with cross-functional teams using GitHub to manage version control and streamline workflows.",
           "Developed and maintained reusable components to ensure consistency and reduce development time.",
-          "Participated in design discussions, provided technical insights, and implemented feedback to achieve project objectives.",
-          "Diagnosed and resolved UI/UX issues, improving usability and overall user satisfaction.",
-          "Utilized JavaScript libraries and frameworks to enhance application functionality and improve development efficiency.",
-          "Implemented responsive design principles to ensure seamless user experiences across various devices and screen sizes.",
-          "Conducted code reviews and provided constructive feedback to team members to improve overall code quality.",
-          "Stayed up-to-date with industry trends and emerging technologies to continuously improve skills and knowledge.",
-        ],
-      },
-      {
-        role: "Frontend Developer",
-        company: "Techpem plc",
-        period: "2020 - 2022",
-        achievements: [
-          "Designed and implemented responsive web interfaces ensuring seamless cross-device user experiences",
-          "Developed scalable React applications using reusable component architecture",
-          "Integrated frontend with RESTful APIs for efficient data fetching and client-server communication",
-          "Optimized application performance through asset optimization and lazy loading techniques",
-          "Collaborated with designers and backend developers to align UI with functional requirements",
-          "Implemented WCAG standards to create accessible web applications",
-          "Conducted cross-browser testing to ensure consistent functionality and visual appeal",
-          "Managed codebase using Git/GitHub for effective team collaboration",
+          "Participated in code reviews, debugging, and technical discussions to improve application quality.",
         ],
       },
       {
         role: "Frontend Web Developer",
-        company: "Freelance",
+        company: "Techpem PLC - Nigeria",
+        period: "June 2022 - July 2023",
+        achievements: [
+          "Developed responsive frontend interfaces using React and reusable component architecture.",
+          "Integrated frontend applications with RESTful APIs to support efficient client-server communication.",
+          "Optimized application performance using lazy loading, asset compression, and responsive rendering techniques.",
+          "Conducted cross-browser testing and debugging to maintain consistent user experience across devices.",
+          "Collaborated with designers and backend developers to implement functional and visually consistent interfaces.",
+          "Implemented form validation and user feedback systems to improve usability and data accuracy.",
+        ],
+      },
+      {
+        role: "Frontend Web Developer",
+        company: "Freelance - Nigeria",
         period: "June 2021 - May 2022",
         achievements: [
-          "Collaborated with clients to understand requirements and deliver tailored solutions",
-          "Applied responsive design principles to enhance mobile user experience",
-          "Implemented UI/UX best practices to create intuitive interfaces",
-          "Developed interactive UI components including modals, carousels, and dropdowns",
-          "Conducted thorough testing and debugging to ensure optimal performance",
-          "Performed regular website updates and performance optimizations",
-          "Implemented version control using Git for efficient code management",
-          "Documented code and workflows to streamline onboarding and maintenance",
-          "Worked remotely, demonstrating strong self-motivation and time management skills.",
+          "Built responsive websites and frontend interfaces tailored to client requirements.",
+          "Applied UI/​UX principles to improve usability, layout consistency, and user engagement.",
+          "Performed testing, debugging, and cross-browser optimization to improve application reliability.",
+          "Conducted website maintenance, performance optimization, and content updates for client projects.",
+          "Implemented version control workflows using GitHub.",
         ],
       },
     ],
@@ -144,12 +135,12 @@ const Resume = () => {
     ],
     certifications: [
       {
-        title: "The web developer bootcamp",
+        title: "The Web Developer Bootcamp",
         instructor: "Colt Steele",
         issuer: "Udemy",
       },
       {
-        title: "The Ultimate React Course",
+        title: "The Ultimate React",
         instructor: "Jonas Schmedtmann",
         issuer: "Udemy",
       },
@@ -202,7 +193,7 @@ const Resume = () => {
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="resume.pdf"
+                  href="CV.pdf"
                   download="Nwattah-Angela-Resume.pdf"
                   className="px-3 sm:px-4 py-1 sm:py-2 bg-white dark:bg-gray-700 border border-amber-600 text-amber-600 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-gray-600 rounded-lg flex items-center text-xs sm:text-sm font-medium"
                 >
@@ -361,29 +352,39 @@ const Resume = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/70 z-50 
+            flex items-start justify-center p-0 sm:p-5 sm:pt-[3vh]"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setIsModalOpen(false);
+            }}
           >
             <motion.div
-              initial={{ scale: 0.9, y: 50 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 50 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative p-2 sm:p-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="bg-white dark:bg-gray-800
+               w-full h-full sm:rounded-2xl shadow-2xl 
+               sm:max-w-4xl sm:h-auto sm:max-h-[83vh] 
+              flex flex-col relative"
             >
               {/* Modal Header */}
-              <div className="sticky top-0 bg-white dark:bg-gray-800 p-3 sm:p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center z-10">
+              <div className="flex-shrink-0 bg-white dark:bg-gray-800 p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center sm:rounded-t-2xl">
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-amber-100">
                   {resumeData.name}'s Resume
                 </h2>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="p-1 sm:p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-amber-200"
+                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-amber-200 transition-colors"
+                  aria-label="Close modal"
                 >
-                  <FaTimes />
+                  <FaTimes size={20} />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-4 sm:p-6">
+              <div className="flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6">
                 {/* Full Resume Content */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
                   <div>
@@ -463,7 +464,7 @@ const Resume = () => {
                 </div>
 
                 {/* Experience */}
-                <div>
+                <div className="pb-4">
                   <h3 className="text-base sm:text-lg font-semibold text-amber-800 dark:text-amber-200 mb-3 sm:mb-4 pb-2 border-b border-amber-200/50 dark:border-amber-800/30">
                     Experience
                   </h3>
@@ -493,19 +494,19 @@ const Resume = () => {
                 </div>
               </div>
 
-              {/* Modal Footer */}
-              <div className="sticky bottom-0 bg-white dark:bg-gray-800 p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700 flex justify-end">
+              {/* Modal Footer - Fixed at bottom */}
+              <div className="flex-shrink-0 bg-white dark:bg-gray-800 p-4 sm:p-6 border-t border-gray-200 dark:border-gray-700 flex justify-end sm:rounded-b-2xl">
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="/resume.pdf"
+                  href="/CV.pdf"
                   download="Nwattah-Angela-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 sm:px-4 py-1 sm:py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg flex items-center text-xs sm:text-sm font-medium"
+                  className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg flex items-center text-sm font-medium shadow-lg hover:shadow-xl transition-shadow"
                 >
-                  <FaDownload className="mr-1 sm:mr-2" />
-                  Download PDF
+                  <FaDownload className="mr-2" />
+                  Download Full PDF
                 </motion.a>
               </div>
             </motion.div>
