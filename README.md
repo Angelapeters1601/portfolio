@@ -69,7 +69,9 @@ Here are a few of the featured projects showcased in the portfolio:
 
 🔸 Corley Legal – Legal service website
 
-🔸 JiffyFox – Analytics and data insight platform
+🔸 JiffyFox – Handyman and home services platform
+
+🔸 SpiffyFox – Modern service rendering web-application
 
 🔸 Rate-it – Product review/rating system
 
